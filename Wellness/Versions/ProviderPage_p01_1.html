@@ -1,0 +1,111 @@
+  <!-- ======== @Region: body ======== -->
+   <div class="container-fluid" style="margin-left:30px;">
+		<!--Main div content -->
+		<div class='row'>
+			<!--Section 1 -->
+			<div class="col-md-6"> 
+				<!-- Picture, Rates, Reviews-->
+				<div class="row well introWell">
+					<img class="col-md-4" style="width:200px; height:150px;" src="GroupImages/Wellness/Providers/Alexia.jpg" />
+					<div class="col-md-7">
+						<h2 class="dietHeader" style="margin-left:0px;">{{provider.title}}</h2>
+						<h3 class="dietHeader" style="margin-left:0px; font-weight:normal;">{{provider.JobDesc}}</h3>
+						<p style="margin-top:15px;">Reviews: {{provider.Ratings}}</p>
+						<span style="padding-right:20px;">Rates: {{provider.Rates}}</span>
+						<span>Location: {{provider.Location}}</span>
+					</div>
+				</div><!--End: Picture, Rates, Reviews-->
+			
+				<!--Credentials, Experience, and Details -->
+				<div providerpage-dir class="jumbotron jumboStyle">
+					<div class=" btn-group btn-group-lg provBtnGroup" role="group">
+						<input class="btn btn-group providerButton" role="group"  ng-click="showCred($event)" value="Credentials" />
+						<input class="btn btn-group providerButton" role="group"  ng-click="showExp($event)"value="Experience" />
+						<input class="btn btn-group providerButton" role="group"  ng-click="showDetails($event)"value="Details" />
+					</div>
+					<!--Credentials-->
+					<div ng-show="credProv" style="margin-top:20px;">
+						<h4 class="jumboh4" style="margin-top:-20px !important; font-weight:bold;">Education/Certifications, and Professional Memberships</h4>
+						<ul class="listStyle" ng-repeat="credential in provider.Credentials track by $index">
+							<li>{{credential}}</li>
+						</ul>
+					</div><!--End ng-show="credProv"-->
+					
+					<!-- Experience-->
+					<div ng-hide="expProv">	
+						<h4 class="jumboh4" style="margin-top:0px !important; font-weight:bold;">Work Experience/Professional Statement</h4>
+						<span>{{provider.Experience}}</span>
+					</div><!--End ng-show="expProv"-->
+					
+					<!-- Details-->
+					<div ng-hide="detailsProv">	
+						<h4 class="jumboh4" style="margin-top:0px !important; font-weight:bold;">Relevant Information</h4>
+						<div ng-repeat="details in provider.Details track by $index">
+							<ul class="listStyle" ng-repeat="(key, value) in details">
+								<li><strong>{{key}}:</strong>&nbsp;{{value}}</li>
+							</ul>
+						</div>
+					</div><!--End ng-show="expProv"-->
+				</div><!--End: Credentials, Experience, and Details -->
+			</div><!--End: Section 1 -->	
+			
+			<!--Section:2 Maps and Appointments-->
+			<div class="col-md-5" style="margin-left:0px;">
+				<!--Maps-->
+				<div  id="map-canvas"></div>
+				
+			<!-- Make table for Appointments-->
+			<div>
+				 <h4 class="apptH4">Make an appointment</h4>
+				  <div class="divOutAppt">
+				   <span class="col-xs-1 calGlyphLeft"><a href="#" class="glyphicon glyphicon-chevron-left" aria-hidden="true"></a></span>
+				   <div class="col-xs-1 tabColor divInAppt" ng-repeat="dayInfo in daydateInfos track by $index">{{dayInfo.day}} {{dayInfo.date|date:"MM/dd"}}
+					<div class="apptTimeDiv" ng-if="!((dayInfo.day =='Sun')||(dayInfo.day =='Sat'))" ng-repeat="time in apptTime track by $index">
+						<div class="apptTime">
+							<a href="#" class="tdStyle">{{time}}</a>
+						</div>
+					</div>
+				  </div>
+				   <span class="col-xs-1 calGlyphRight"><a href="#" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></a></span>
+				 </div>
+				</div>
+			<!--End: Make table for Appointments-->
+			</div> <!--Section:2 Maps and Appointments-->
+	</div> <!--End:Class="Main div content "-->
+		
+		<!------Videos-------------------->
+		<div class='row'>
+			<h3 class="providerList h3Videos">Videos</h3>
+			<div class="col-sm-4 vidDiv" video-art-dir videourl="{{video}}" ng-repeat="video in provider.Videos track by $index">
+				<iframe class="iframeMargin" width="380" height="250" ng-src="{{videoSce}}" 
+					frameborder="0" allowfullscreen>
+				</iframe>
+			</div>
+		</div> 
+		
+		<!------------Articles-------------->
+		<div class='row'>	
+			<h3 class="providerList h3Art">Articles</h3>
+			<div class="col-sm-4 artDiv" video-art-dir artimageurl="{{artimg.image}}" ng-repeat="artimg in provider.Articles track by $index">
+				<a href="{{artimg.url}}" class="noDec"><img class="artImg" 
+				onclick="" ng-src="{{artImgSce}}" /></a>
+				<a href="{{artimg.url}}" class="noDec"><h4 style="background-color:#1ea1be; width:390px; height:50px; margin-top:0px; padding-left:10px; padding-top:10px; color:#ffffff; font-size:1.5em; font-weight:bold;">{{artimg.title}}</h4></a>
+			</div>
+		</div>
+		
+		<!------------Reviews--------------------->
+		<div class='row'>
+			<h3 class="providerList h3Rev" style="margin-left:-5px;">Reviews</h3>
+			<div class="col-sm-4 artDiv" ng-repeat="review in provider.Reviews track by $index">
+				<div change-color rating="{{review.rateNum}}" class="col-xs-5 pull-right" style="padding-top:4px;">
+							<span id="dot01" class="circleStyle"></span>
+							<span id="dot02" class="circleStyle"></span>
+							<span id="dot03" class="circleStyle"></span>
+							<span id="dot04" class="circleStyle"></span>
+				</div>
+				<div style="width:390px; margin-top:0px; padding-top:10px;">{{review.rateDesc}}</div>
+			</div>
+		</div>	
+		
+  </div><!--End div class="container-fluid" -->
+ 

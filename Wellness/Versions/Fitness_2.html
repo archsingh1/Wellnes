@@ -1,0 +1,50 @@
+  <!-- ======== @Region: body ======== -->
+
+	
+	<!-- Add wellness sub-section Picture-->
+	<div style="height:60px;">
+		<h1 class="" style="margin-top:3%; margin-left:38%; margin-bottom:20px; font-size:2em;" >Fitness that works for you</h1>
+	</div>
+		
+   <div class="container-fluid" style="margin-top:3%;">
+   <!--Main div content -->
+	<div class="row mainContent"><!--Main div content -->
+	  <div ng-if="!searchInput.title">
+		<a href="#" ng-repeat="activity in fitness|limitTo:40" style="text-decoration:none;">
+			<fitness></fitness>
+		</a>
+	 </div><!-- End: ng-if-->
+	
+	 <div ng-if="searchInput.title">
+		<a href="#" ng-repeat="activity in fitness|filter:{title:searchInput.title}" style="text-decoration:none;">
+		 <fitness></fitness>
+		</a>
+	 </div><!-- End: ng-if-->
+	</div><!--End: Main div content -->
+  </div><!--End div class="container" -->
+      
+   <!-- Add Pagination-->
+   <div class="container">
+    <div class="row">
+     <nav class="col-md-12 navPage">
+	  <ul class="pagination pagination-lg">
+		<li>
+		  <a href="#" aria-label="Previous">
+			<span aria-hidden="true">&laquo;</span>
+		  </a>
+		</li>
+			<li class="active"><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+		<li>
+		  <a href="#" aria-label="Next">
+			<span aria-hidden="true">&raquo;</span>
+		  </a>
+		</li>
+	  </ul>
+	 </nav>
+    </div>
+   </div>
+ 

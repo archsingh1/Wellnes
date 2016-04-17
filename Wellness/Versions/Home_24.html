@@ -1,0 +1,174 @@
+  <!-- ======== @Region: body ======== -->
+  <body>
+	<!-------------------------------->
+	<!------------Main Content-------->
+	<!-------------------------------->
+	<div id="mainCont" style="margin-top:-180px;">	
+	 <!-- Image and video-->
+	 <div id="imgVid"> 
+		<!-- Images -->
+		<div id="imgCont" class="container">
+			<div class="rowWidth row">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xlg-4 imgContDiv1">
+					<img class="imgBright imgCarousel" src="GroupImages/Wellness/Nutrition/oats_barley.jpg" />
+				</div>	
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xlg-4 imgContDiv2">
+					<img class="imgBright imgCarousel imgTwo" src="GroupImages/Cardio/fitness_1.jpg" />
+				</div>	
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xlg-4 imgContDiv3">
+					<img class="imgBright imgCarousel imgThree" src="GroupImages/Flex/YogaBreathe.jpg" />
+				</div>	
+			</div>
+		</div>
+		
+		<!-- Video -->
+		<div class="videoIntro">
+		   <div id="introWellIcon" class="carouselCaption spanFont showDetails glyphicon glyphicon-play-circle" aria-hidden="true"></div> 
+		   <h1 class="carouselH1">Making Wellness Happen - Together</h1>
+		   
+		  </div>
+	 </div> <!-- End - Image and Video -->
+	
+	<!-- Get Started-->
+	<div class="getStarted">
+		<img class='startImg' src="GroupImages/Wellness/meeting.jpg" />
+		<div class="startDiv">
+			<h2 class="startH2">Get Started!</h2>
+			<div class="row getStartedRow">
+				<!-- Thumbnail 1-->
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xlg-4">
+					<div class="thumbnail thumbnailDiv">
+						<div class="caption thumbnailCaption">
+							<h3 class="thumbnailH3">Browse</h3>
+							<p class="thumbnailPara">
+								Pick and choose from a vast variety of fitness seminars, nutrition classes, and mental health courses.
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- Thumbnail 2-->
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xlg-4">
+					<div class="thumbnail thumbnailDiv">
+						<div class="caption thumbnailCaption">
+							<h3 class="thumbnailH3">Schedule</h3>
+							<p class="thumbnailPara">
+								Schedule with a provider for a date and time that is convenient for you.
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- Thumbnail 3-->
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xlg-4">
+					<div class="thumbnail thumbnailDiv">
+						<div class="caption thumbnailCaption">
+							<h3 class="thumbnailH3">Enjoy</h3>
+							<p class="thumbnailPara">
+								Relax and enjoy the benefits of good health and get tips for a better life from the pros!
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br/><br />
+			<!-- Button-->
+			<button type="button" class="btn btn-info btn-lg letsGoButton">
+				Let's Go!				
+			</button>
+		</div>
+	</div>
+	<!--End: Get Started-->
+
+	<!--Sticky Nav Bar for 'Plan, Save, Enjoy' section  
+		Code from: http://codepen.io/Guilh/pen/JLKbn
+	-->
+	<nav class="main-nav">
+	  <a href="#"><h3 id="saveTag" class="col-sm-3 col-md-3 col-lg-3 navSaveTag">Savings</h3></a>
+	  
+	  <a href="#"><h3 id="changeTag" class="col-sm-3 col-md-3 col-lg-3 navChangeTag">Effective Changes</h3></a>
+	  
+	  <a href="#"><h3 id="outcomeTag" class="col-sm-3 col-md-3 col-lg-3 navOutcomeTag">Positive Outcomes</h3></a>
+	</nav>
+	<div class="main container mainSection">
+		<!--Savings Section -->
+	  <div id="saveSec" class="row saveSecDiv">
+		<p class="col-md-7 col-lg-7 col-xlg-7 saveSecPara"><strong>Save on time and money.</strong><br />
+			Good physical and mental health are key to a long and a happy life. However, finding resources to do so is difficult. ZymaLife makes this easy by helping you choose from a vast network of providers. You can select providers based on their experience, specialization and skillset at a price that suits your budget. Save time by getting all the information in one place and make choices that suit your lifestyle.  
+		</p>
+		<img class="col-md-5 col-lg-5 col-lg-5 col-xlg-5 saveSecImg" src="GroupImages/Wellness/finance.jpg"/>
+	  </div>
+	  <!-- Effective Change Section-->
+	  <div id="changeSec" class="row changeSecDiv">
+		<img class="col-md-5 col-lg-5 col-lg-5 col-xlg-5 changeSecImg" src="GroupImages/Wellness/Providers/Roxanne.jpg"/>
+		<p class="col-md-7 col-lg-7 col-xlg-7 changeSecPara">
+			<strong>Make changes to your life that are manageable.</strong><br /> With the help of your provider, you can turn your goals into actionable steps. Your provider can help you break your old routines and make new ones that promote your wellness.  
+		</p>
+	  </div>
+		<!-- Positive Change Section -->
+	  <div id="outcomeSec" class="row outcomeSecDiv">
+		<p class="col-md-7 col-lg-7 col-xlg-7 outcomeSecPara">
+			<strong>See the positive outcomes and enjoy your wellness!</strong><br /> 
+			Get regular feedbacks to monitor your progress and stay motivated. Develop your routines into healthy habits that will last you forever. Benefit from the new and improved you by accomplishing more in your professional and personal life.
+		</p>
+		<img class="col-md-5 col-lg-5 col-lg-5 col-xlg-5 outcomeSecImg" src="GroupImages/Wellness/coffeeNbooks.jpg"/>
+  	  </div>
+	 </div>	<!--End: Sticky Nav Bar for 'Plan, Save, Enjoy' section -->
+	</div><!-- End: Main Content-->
+					
+	<!-- Make the Savings, Changes and Outcomes nav bar sticky-->
+	<script>
+		var  mn = $(".main-nav");
+		mns = "main-nav-scrolled";
+		hdr = $('main').height();
+
+		$(window).scroll(function() {
+		  if( $(this).scrollTop() > 1300 ) {
+			mn.addClass(mns);
+		  } else {
+			mn.removeClass(mns);
+		  }
+	  	});
+	</script>
+	
+	<script>
+		$(document).ready(function(){
+		//Make scrolling smooth on the page when the Savings et al section is clicked
+			$("#saveTag").click(function(event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $("#saveSec").offset().top},
+					'slow');
+				});
+				
+			$("#changeTag").click(function(event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $("#changeSec").offset().top},
+					'slow');
+				});
+				
+			$("#outcomeTag").click(function(event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $("#outcomeSec").offset().top},
+					'slow');
+				});	
+
+		}); //End scrolling section
+		
+		//Click the play icon to display the video
+		$("#introWellIcon").click(function(){
+				$("#introWellVideo").removeClass("hideDetails").addClass('showDetails');	
+				$("#introWellIcon").remove();
+				$("#imgCont").remove();
+				$("#imgVid").append(
+					'<div id="introWellVideo">'+
+					'<iframe class="introVidIframe" src="https://www.youtube.com/embed/uhm2p2yerUc?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>' +
+					'</div>'
+				).css('margin-bottom', '265px');
+				
+		});
+
+	</script>	
+		
+  </body>
+</html>

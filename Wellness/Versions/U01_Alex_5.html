@@ -1,0 +1,154 @@
+<div user-nav>
+	<div class="page-header userDiv">
+	  <img class="userImg" src="GroupImages/Wellness/Providers/Alexia.jpg" />	
+	  <h1 class="userName">Alexia Nugyen</h1>
+	  <hr />
+	  <nav class="navbar navbar-default userNavbar">
+		  <div class="container-fluid">
+			<div class="navbar-header userHeader">
+			  <a href="#" id="navWall" class="navbar-text noDec navColor" ng-click="showWall($event)">Wall</a>
+			  <a href="#" id="navAppt" class="navbar-text noDec navColor" ng-click="showAppt($event)">Appointments</a>
+			  <a href="#" id="navMail" class="navbar-text noDec navColor" ng-click="showMail($event)">Mails</a>
+			  <a href="#" id="navReviews" class="navbar-text noDec navColor" ng-click="showReview($event)">Reviews</a>
+			  <a href="#" id="navProfile" class="navbar-text noDec navColor" ng-click="showProfile($event)">Profile</a>
+			</div>
+		  </div>
+	  </nav>
+	</div><!-- End: class="page-header"-->
+
+	<div class="container-fluid userContainer">
+		<div class="row" ng-show="userWall"><!-- Wall-->
+			<a href="#" class="col-md-4 noDec wallHref">
+				<img class="wallImg" src="GroupImages/Fitness/Flex/flexYogaBreath.jpg" />
+				<p class="wallPara">Yoga stretches for better back</p>
+			</a>
+			<a href="#" class="col-md-4 noDec wallHref">
+				<img class="wallImg" src="GroupImages/Fitness/Flex/YogaBreathe.jpg" />
+				<p class="wallPara">Want to sleep better? Meditate!</p>
+			</a>
+			<a href="#" class="col-md-4 noDec wallHref">
+				<img class="wallImg" src="GroupImages/Nutrition/Nutrition/organic.jpg" />
+				<p class="wallPara">Healthy eating for happier heart</p>
+			</a>
+		</div><!-- End class="row" for Wall-->
+		
+		<!---------Appointments------->
+		<div class="row" ng-hide="userAppt" style="background-color:#ffffff;">
+			<div ng-repeat="upcomingAppt in user.upcomingAppt track by $index">
+				<div style="margin-top:2%; margin-left:3%; margin-bottom:3%;">
+					<h2>Upcoming Appointments</h2>
+					<p style="height:15px; padding-left:15% !important; margin-top:3%; padding-top:1%;">{{upcomingAppt}}</p>
+				</div>
+			</div>	<!--End: ng-repeat -->
+			<div ng-repeat="pastAppt in user.pastAppt track by $index">
+				<div style="margin-top:2%; margin-left:3%; margin-bottom:3%;">
+					<h2>Past Appointments</h2>
+					<p style="height:15px; padding-left:15% !important; margin-top:3%; padding-top:1%;">{{pastAppt}}</p>
+				</div>
+			</div>
+		</div><!---------End: Appointments------->
+		
+		
+		<!-------------Mails------------------>
+		<div ng-hide="userMail">	
+			<div ng-repeat="mail in user.mails track by $index" class="colorWhite">
+				<div ng-repeat="(key, value) in mail">
+					<p class="col-md-4 col-lg-6 col-sm-8">
+						{{key}}
+					</p>
+					<p class="col-md-8 col-lg-6 col-sm-8 userParaHt">
+						{{value}}
+					</p>
+				</div>
+			</div>
+		</div><!-------------End: Mails------------------>
+		
+		<!---------------Reviews----------------->
+		<div ng-hide="userReview">	
+		<div class="row">	
+			<div ng-repeat="review in user.reviews track by $index">
+				<div class="col-md-3 userRev">
+					<p class="userRevPara">{{review.providerName}}</p>
+					<p change-color rating="{{review.rateNum}}" class="userrateNum">
+						<span id="dot01" class="glyphicon glyphicon-star-empty userRateFont" aria-hidden="true"></span>
+						<span id="dot02" class="glyphicon glyphicon-star-empty userRateFont" aria-hidden="true"></span>
+						<span id="dot03" class="glyphicon glyphicon-star-empty userRateFont" aria-hidden="true"></span>
+						<span id="dot04" class="glyphicon glyphicon-star-empty userRateFont" aria-hidden="true"></span>
+						<span id="dot05" class="glyphicon glyphicon-star-empty userRateFont" aria-hidden="true"></span>
+					</p>
+				</div>
+				<div class="col-md-8" style="margin-top:2%; margin-right:3%; margin-bottom:3%; border-style:solid; border-width:2px; border-color:#e5e5e5; padding-top:2%; padding-bottom:2%;">
+					{{review.rateDesc}}
+				</div>
+				<hr />
+			</div>	<!--End: ng-repeat -->
+		</div> <!-- class="row"-->
+		</div> <!-- End: Review-->
+		<!-----------------Profile--------------------->
+		
+		
+		
+		
+		
+	</div><!-- End:class="container-fluid" -->
+</div>
+<style>
+	.changeCss{
+		padding-bottom:10px; border-bottom:2px solid blue; font-weight:bold;
+	}
+</style>
+
+<!-- Dynamically change the CSS of the Profiel, Messages, Appointments and Interests section on click-->
+<script>
+	$('#navProfile').click(function(e){
+		e.preventDefault();
+		$(this).addClass('changeCss');
+		$('#navMail').removeClass('changeCss');
+		$('#navAppt').removeClass('changeCss');
+		$('#navWall').removeClass('changeCss');
+		$('#navReviews').removeClass('changeCss');
+	});
+	
+	$('#navMail').click(function(e){
+		e.preventDefault();
+		$(this).addClass('changeCss');
+		$('#navProfile').removeClass('changeCss');
+		$('#navAppt').removeClass('changeCss');
+		$('#navWall').removeClass('changeCss');
+		$('#navReviews').removeClass('changeCss');
+	});
+	
+	$('#navAppt').click(function(e){
+		e.preventDefault();
+		$(this).addClass('changeCss');
+		$('#navMail').removeClass('changeCss');
+		$('#navProfile').removeClass('changeCss');
+		$('#navWall').removeClass('changeCss');
+		$('#navReviews').removeClass('changeCss');
+	});
+	
+	$('#navWall').click(function(e){
+		e.preventDefault();
+		$(this).addClass('changeCss');
+		$('#navProfile').removeClass('changeCss');
+		$('#navMail').removeClass('changeCss');
+		$('#navAppt').removeClass('changeCss');
+		$('#navReviews').removeClass('changeCss');
+	});
+	
+	$('#navReviews').click(function(e){
+		e.preventDefault();
+		$(this).addClass('changeCss');
+		$('#navProfile').removeClass('changeCss');
+		$('#navMail').removeClass('changeCss');
+		$('#navAppt').removeClass('changeCss');
+		$('#navWall').removeClass('changeCss');
+	});
+</script>
+
+
+
+
+
+
+

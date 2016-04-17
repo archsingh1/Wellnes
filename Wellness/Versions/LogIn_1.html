@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userSignup">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>ZymaLife | Making Wellness Happen - Together</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- @todo: fill with your company info or remove -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Bootstrap -->
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		
+ </head>
+  
+  <!-- ======== @Region: body ======== -->
+  <body ng-controller="signupController">
+	<!-- Add the Header-->
+    <header id="header">
+		<nav class="navbar navbar-default" role="navigation">
+		 <div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" id="headZyma">Zyma<span id="headLife">Life</span></a>
+			</div>
+			<ul class="nav navbar-nav pull-right">
+				<li><form name="search-data" class="input-group">
+					<input id="search-data" class="form-control" type="search" ng-model="searchInput.title" placeholder="Search" value=" "/>
+				</form></li>
+				
+				<li><a href="#"  class="liNav">Home</a></li>
+				<li class="dropdown">
+				  <a href="#" class="liNav dropdown-toggle" id="dropdownWellness" data-toggle="dropdown" aria-expanded="true">Wellness&nbsp;<span class="caret"></span></a>
+
+				  <ul id="wellUL" class="dropdown-menu" role="menu" aria-labelledby="dropdownWellness">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="wellItem">Fitness</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="wellItem">Nutrition</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="wellItem">Mindful</a></li>
+				 </ul>
+			   </li>
+				<li><a href="#" class="liNav">Login</a></li>
+			</ul>
+		 </div>	<!-- End header nav container div-->
+		</nav>
+	</header>
+				
+   <!--Main div content -->
+   <div id="" class="container-fluid signupMain">
+     <h3 class="signupH3">Sign up for ZymaLife today</h3>
+		<form name="formUser" id="formUser" novalidate style="width:700px;" ng-submit="formUserSubmit()" cancel-dir>
+			<h4 class="signupH4">Create an Account</h4>
+			<!-- First and last name-->
+			<div class="form-group signupInfo">
+				<label for="userfirstname" name="userfirstname">First Name</label>
+				<input name="userfirstname" type='textbox' class="form-control" ng-model="userForm.userfirstname"/>
+			</div>
+			<div class="form-group signupInfo">
+				<label for="userlastName" name="userlastName">Last Name</label>
+				<input name="userlastName" type='textbox' class="form-control" ng-model="userForm.userlastName"/>
+			</div>
+			<!-- Email -->
+			<div class="form-group has-feedback signupInfo" ng-class="{'has-success':formUser.userEmail.$dirty && formUser.userEmail.$valid, 'has-error':formUser.userEmail.$dirty && formUser.userEmail.$invalid}">
+				<label class="control-label" for="userEmail">Email address</label>
+				<input id="userEmail" name="userEmail" ng-model="userForm.userEmail" type='email' class="form-control"/>
+				<span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok':formUser.userEmail.$dirty && formUser.userEmail.$valid, 'glyphicon-remove':formUser.userEmail.$dirty && formUser.userEmail.$invalid}" aria-hidden="true"></span>
+			</div>
+		
+			<!-- Password -->
+			<div class="form-group has-feedback signupInfo" ng-class="{'has-success':formUser.userPW.$dirty && formUser.userPW.$valid, 'has-error':formUser.userPW.$dirty && formUser.userPW.$invalid}">
+				<label class="control-label" for="userPW">Password</label>
+				<input id="userPW" name="userPW" type="password" required class="form-control" ng-model="userForm.userPW">
+				<span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok':formUser.userPW.$dirty && formUser.userPW.$valid, 'glyphicon-remove':formUser.userPW.$dirty && formUser.userPW.$invalid}" aria-hidden="true"></span>
+			</div>
+			
+			<!--Confirm Password -->
+			<div class="form-group has-feedback signupInfo" ng-class="{'has-success':formUser.userConfPW.$dirty && formUser.userConfPW.$valid, 'has-error':formUser.userConfPW.$dirty && formUser.userConfPW.$invalid}">
+				<label class="control-label" for="userConfPW">Confirm Password</label>
+				<input id="userConfPW" name="userConfPW" type="password" required class="form-control" ng-model="userForm.userConfPW">
+				<span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok':formUser.userConfPW.$dirty && formUser.userConfPW.$valid, 'glyphicon-remove':formUser.userConfPW.$dirty && formUser.userConfPW.$invalid}" aria-hidden="true"></span>
+			</div>
+			
+			<!--Add Buttons -->
+			<div class="signupBtn">
+				<button class="btn btn-danger signupBtnFont" type="button" ng-click="cancellAll()">Reset</button> &nbsp;&nbsp;
+				<button class="btn btn-primary signupBtnFont" type="submit" ng-disabled="formUser.$invalid || formUser.$pristine">Done</button>
+			</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</form>
+	 
+	 
+	 
+
+	 </div><!--End: Main div content -->
+  
+	<br /><br />
+  <!----------------------------->
+  <!------------ FOOTER --------->
+  <!----------------------------->
+	<footer id="footer">
+	</footer>
+    
+	<!----------------->
+	<!----Scripts ----->
+	<!----------------->
+	<script src="js/jquery.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<link href="css/themeStyle.css" rel="stylesheet">
+    <script src="jsFiles/wellnessJS.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="Controllers/userSignup.js"></script>
+	<!--Plugin for Lazy Loading-->
+	<script src="js/jquery.lazyload.js" type="text/javascript"></script>
+	
+  </body>
+</html>

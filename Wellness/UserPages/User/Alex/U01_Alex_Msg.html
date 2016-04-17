@@ -1,0 +1,45 @@
+<div user-nav>
+	<div class="page-header userDiv">
+	  <img class="userImg" src="GroupImages/Wellness/Providers/Alexia.jpg" />	
+	  <h1 class="userName">Alexia Nugyen</h1>
+	  <hr />
+	  <nav class="navbar navbar-default userNavbar">
+		  <div class="container-fluid">
+			<div class="navbar-header userHeader">
+			  <a href="#/AlexWall" class="navbar-text noDec navColor">Wall</a>
+			  <a href="#/AlexAppt" class="navbar-text noDec navColor">Appointments</a>
+			  <a href="#/AlexMsg" class="navbar-text noDec navColor changeCss">Messages</a>
+			  <a href="#/AlexReviews" class="navbar-text noDec navColor">Reviews</a>
+			  <a href="#/AlexProfile" class="navbar-text noDec navColor">Profile</a>
+			</div>
+		  </div>
+	  </nav>
+	</div><!-- End: class="page-header"-->
+
+	<div class="container-fluid userContainer">
+
+		<!-------------Messages------------------>
+		<div class="row colorWhite">	
+			<div ng-repeat="mail in user.mails track by $index"  style="margin-left:10%; margin-top:3%;">
+				<div ng-repeat="(key, value) in mail">
+					<a href="#" class="col-md-3 col-sm-3 col-lg-3 noDec userPara">
+						{{key}}
+					</a>
+					<p class="col-md-7 col-sm-7 col-lg-7 userParaHt">
+						{{value}}
+					</p>
+					<p class="col-md-2 col-sm-2 col-lg-2">Date</p>
+					<br/>
+				</div>
+			</div>
+		</div><!-------------End: Messages------------------>
+	</div><!-- End:class="container-fluid" -->
+</div>
+<style>
+	.changeCss{
+		padding-bottom:10px; border-bottom:2px solid #1ea1be; font-weight:bold;
+	}
+</style>
+
+
+

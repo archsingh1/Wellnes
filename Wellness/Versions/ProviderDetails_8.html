@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="providerDetails">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>ZymaLife | Find Providers to Keep You Motivated</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- @todo: fill with your company info or remove -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Bootstrap -->
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+ </head>
+  
+  <!-- ======== @Region: body ======== -->
+  <body ng-controller="detailsController">
+	<!-- Add the Header-->
+    <header id="header">
+		<nav class="navbar navbar-default" role="navigation">
+		 <div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" id="headZyma">Zyma<span id="headLife">Life</span></a>
+			</div>
+			<ul class="nav navbar-nav pull-right">
+				<li><form name="search-data" class="input-group">
+					<input id="search-data" class="form-control" type="search" ng-model="searchInput.title" placeholder="Search" value=" "/>
+				</form></li>
+				
+				<li><a href="#"  class="liNav">Home</a></li>
+				<li class="dropdown">
+				  <a href="#" class="liNav dropdown-toggle" id="dropdownWellness" data-toggle="dropdown" aria-expanded="true">Wellness&nbsp;<span class="caret"></span></a>
+
+				  <ul id="wellUL" class="dropdown-menu" role="menu" aria-labelledby="dropdownWellness">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="wellItem">Fitness</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="wellItem">Nutrition</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="wellItem">Mindful</a></li>
+				 </ul>
+			   </li>
+				<li><a href="#" class="liNav">Login</a></li>
+			</ul>
+		 </div>	<!-- End header nav container div-->
+		</nav>
+	</header>
+	
+	<!--Provider Information Nav-->
+	<nav class="navbar navbar-default navPD" role="navigation">
+		<div class="container">
+		 <ul class="nav navbar-nav">
+			<li><a href="#" class="liPD"><strong>Profile</strong></a></li>
+			<li><a href="#" class="liPD">Articles</a></li>
+			<li><a href="#" class="liPD">Videos</a></li>
+			<li><a href="#" class="liPD">Calender</a></li>
+		 </ul>
+	   </div>	
+	</nav> <!-- End: Provider Information Nav-->
+			
+   <!--Main div content -->
+   <div class="container-fluid contPD">
+     <h3 class="h3PD">Profile</h3>
+	 <div class='row'>
+	  <div class="col-sm-3 overview">
+		<h4 class="h4PD"><a href="#" class="noDec"><strong>Overview</strong></a></h4>
+		<h4 class="h4PD"><a href="#" class="noDec">About</a></h4>
+		<h4 class="h4PD"><a href="#" class="noDec">Education</a></h4>
+		<h4 class="h4PD"><a href="#" class="noDec">Work Experience</a></h4>
+		<h4 class="h4PD"><a href="#" class="noDec">Details</a></h4>
+	 </div>
+	  <div class="col-sm-8 profilePD">
+	  <!--About Section -->
+		<div class="marginPD" style="margin-top:5px;">
+			<a href="#" class="noDec colorPD" ng-click="aboutSec()" glyph-dir>
+				<span class="glyphicon glyphicon-plus glyphPlus" aria-hidden="true"></span>
+				<h4 class="h4FormPD">About</h4>
+			</a>
+			<form name="formAbout" id="formAbout" novalidate class="well" style="width:820px;" ng-hide="hideForm" ng-submit="aboutSubmit()" cancel-dir>
+				<!-- First and last name -->
+				<div class="row">
+				  <div class="col-sm-6 form-group">
+					<label for="firstname" name="firstName">First Name</label>
+					<input name="firstName" type='textbox' class="form-control" ng-model="firstName"/>
+				  </div>
+				  <div class="col-sm-6">
+					<label for="lastName" name="lastName">Last Name</label>
+					<input name="lastName" type='textbox' class="form-control" ng-model="lastName"/>
+				  </div>
+				</div>
+				
+				<!-- Photo -->
+				<div class="form-group">
+					<label for="photoPD" name="photoPD">Add a photo</label>
+					<input name="photoPD" type='' class="form-control" src="" ng-model="photoPD"/>
+				</div>
+					
+				<!-- Email -->
+				<div class="form-group has-feedback" ng-class="{'has-success':formAbout.emailPD.$dirty && formAbout.emailPD.$valid, 'has-error':formAbout.emailPD.$dirty && formAbout.emailPD.$invalid}" style="width:500px;">
+					<label class="control-label" for="emailPD">Email address</label>
+					<input id="emailPD" name="emailPD" ng-model="about.email" type='email' class="form-control"/>
+					<span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok':formAbout.emailPD.$dirty && formAbout.emailPD.$valid, 'glyphicon-remove':formAbout.emailPD.$dirty && formAbout.emailPD.$invalid}" aria-hidden="true"></span>
+				</div>
+					
+				<!-- Password -->
+				<div class="form-group has-feedback" ng-class="{'has-success':formAbout.passwordPD.$dirty && formAbout.passwordPD.$valid, 'has-error':formAbout.passwordPD.$dirty && formAbout.passwordPD.$invalid}" style="width:500px;">
+					<label class="control-label" for="passwordPD">Change Password</label>
+					<input id="passwordPD" name="passwordPD" type="password" required class="form-control" ng-model="about.password">
+					<span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok':formAbout.passwordPD.$dirty && formAbout.passwordPD.$valid, 'glyphicon-remove':formAbout.passwordPD.$dirty && formAbout.passwordPD.$invalid}" aria-hidden="true"></span>
+				</div>
+				<hr/>
+				
+				<!--Add Buttons -->
+				<div style="margin-left:300px;">
+					<button class="btn btn-defaul" style="font-size:1.2em;" type="button" ng-click="cancellAll()">Cancel</button> &nbsp;&nbsp;
+					<button class="btn btn-primary" style="font-size:1.2em;" type="submit" ng-disabled="formAbout.$invalid || formAbout.$pristine">Save</button>
+				</div>
+			<form>
+		
+			
+			<!--Check for data validation----
+			<p>{{data}}</p>
+			<p>{{formAbout.emailPD}} <br /> {{formAbout.passwordPD}}</p>
+			---->
+			
+		</div><!--End: About Section -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="marginPD">
+			<a href="#" class="noDec colorPD">
+				<span class="glyphicon glyphicon-plus glyphPlus" aria-hidden="true"></span>
+				<h4 class="h4FormPD">Education</h4>
+				
+			</a>
+		</div>
+		<div class="marginPD">
+			<a href="#" class="noDec colorPD">
+				<span class="glyphicon glyphicon-plus glyphPlus" aria-hidden="true"></span>
+				<h4 class="h4FormPD">Work Experience</h4>
+				
+			</a>
+		</div>
+		<div class="marginPD">
+			<a href="#" class="noDec colorPD">
+				<span class="glyphicon glyphicon-plus glyphPlus" aria-hidden="true"></span>
+				<h4 class="h4FormPD">Details</h4>
+				
+			</a>
+		</div>
+		<div class="marginPD">
+			<a href="#" class="noDec colorPD">
+				<span class="glyphicon glyphicon-plus glyphPlus" aria-hidden="true"></span>
+				<h4 class="h4FormPD">Contact</h4>
+				
+			</a>
+		</div>
+			
+	  </div>
+	 </div><!--End: Main div content -->
+	
+	 	<br />
+		
+		
+   </div><!--End div class="container-fluid" -->
+  
+	<!-- FOOTER -->
+	<footer id="footer">
+	</footer>
+    
+	<!--Scripts -->
+	<script src="js/jquery.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<link href="css/themeStyle.css" rel="stylesheet">
+    <script src="jsFiles/wellnessJS.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="Controllers/providerDetails.js"></script>
+	<!--Plugin for Lazy Loading-->
+	<script src="js/jquery.lazyload.js" type="text/javascript"></script>
+	
+  </body>
+</html>

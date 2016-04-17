@@ -1,0 +1,90 @@
+  <!-- ======== @Region: body ======== -->
+   <div class="container-fluid" style="margin-left:30px;">
+		<!--Main div content -->
+		<div class='row'>
+			<div class='col-md-5'>
+				<img class="imgDiet" src="GroupImages/Wellness/Nutrition/detoxDiet.jpg" />
+			</div>
+			
+			<div class='col-md-7'>
+				<h2 class="dietHeader">Detox Diet</h2>
+				<p class="dietPara">Detox is the short form of detoxification, which is our body's natural way of flushing out toxins. Toxins are products that are harmful to the body are found in food, water or can even be an outcome of  normal cell functioning. <br/><br />
+				
+				There are different types of detox diets that you can use to cleanse your body. Choose from a variety of providers that can plan according to your preferenences and help you get rid of the harmful products. The end result will leave you with higher energy levels, regulated digestion and improved concetration.</p>
+				
+			</div>
+		</div>
+		
+		<!-------------------------------->
+		<!------Provider and Sort--------->
+		<!-------------------------------->
+		<div class='row'>
+			<div class="col-lg-3">
+					<h2 class="providerList" style="">Providers</h2>
+			</div>
+			<div class="col-lg-8 ">
+				<ul class="nav navbar nav-pills pull-right providerSort">
+				  <li role="presentation" style="margin-top:10px; margin-left:5px;">Sort by:</li>	
+				  <li role="presentation"><a href="#"><strong>Name</strong></a></li>
+				  <li role="presentation"><a href="#">Location</a></li>
+				  <li role="presentation"><a href="#">Rate</a></li>
+				  <li role="presentation"><a href="#">Reviews</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<!------------------------------>
+		<!--Provider div content -->
+		<!------------------------------>
+		<div class="row">
+			  <div ng-repeat="provider in providers|limitTo:40 track by $index" style="text-decoration:none;">
+					<a href="#/{{provider.id}}">
+					<div id="{{provider.id}}" provider-dir class="col-sm-3 providerStyle">
+					  <img class="imgProvider" ng-src="{{provider.image}}"/>
+					  <!--Add title, and ratings-->
+					  <div class="h4ProviderStyle row">
+						<h4 class="col-xs-2" style="padding-left:0px;">{{provider.title}}</h4>
+						<div change-color rating="{{provider.Ratings}}" class="col-xs-5 pull-right" style="padding-top:4px;">
+							<span id="dot01" class="circleStyle"></span>
+							<span id="dot02" class="circleStyle"></span>
+							<span id="dot03" class="circleStyle"></span>
+							<span id="dot04" class="circleStyle"></span>
+							<span id="dot05" class="circleStyle"></span>
+						</div>
+					  </div>
+					  
+					  <h6 class="h6ProviderStyle pull-left">{{provider.JobDesc}}<span style="margin-left:10px;">{{provider.Rates}}</span><span style="margin-left:15px;">{{provider.Location}}</span></h6>
+					</div>
+					</a>
+			 </div><!-- End: ng-if-->
+			
+			
+		  </div><!--End: Provider div content -->
+		
+  </div><!--End div class="container-fluid" -->
+   
+   <!-- Add Pagination-->
+   <div class="container">
+    <div class="row">
+     <nav class="col-md-12 navPage">
+	  <ul class="pagination pagination-lg">
+		<li>
+		  <a href="#" aria-label="Previous">
+			<span aria-hidden="true">&laquo;</span>
+		  </a>
+		</li>
+			<li class="active"><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+		<li>
+		  <a href="#" aria-label="Next">
+			<span aria-hidden="true">&raquo;</span>
+		  </a>
+		</li>
+	  </ul>
+	 </nav>
+    </div>
+   </div> <!-- End Pagination-->
+ 

@@ -1,0 +1,91 @@
+  <!-- ======== @Region: body ======== -->
+   <div class="container-fluid margLeft">
+		<!--Main div content -->
+		<div>
+			<img class="img-reponsive imgDiet" src="GroupImages/Nutrition/Nutrition/oatmeal.jpg" />
+			<h1 class="dietHeader">
+				A Good Day Start
+			</h1>
+		</div>
+
+			<!--  para div-->
+			<div class="paraDiv">
+				<p class="dietPara">
+					A good day starts with a healthy a.m. meal that is a combination of good carbs with some fibres and proteins. Having breakfast prevents overeating and satisfies your appetite so that you cam make smart eating choices through out the day.
+				<br/><br />
+				</p>
+			</div> <!-- End para div-->
+			
+		<!-------------------------------->
+		<!------Provider and Sort--------->
+		<!-------------------------------->
+		<div class="">
+			<h2 class="provH2">Find Providers </h2>
+		</div>
+		<div class="providerSort">
+			<form class="navbar-form navbar-left">
+			  <div class="form-group has-feedback">
+				<i class="glyphicon glyphicon-map-marker form-control-feedback"></i>
+				<input type="text" class="form-control inputWidth" role="search" placeholder="Search for a city"/>
+			  </div>
+			  
+			  <div class="form-group leftMargDrpDwn"> Price:
+				<input type="text" class="form-control priceWidth" placeholder="min"> -
+				<input type="text" class="form-control priceWidth" placeholder="max">
+			  </div>
+			  
+			  <div class="form-group dropdown leftMargDrpDwn"> 
+				<button class="btn btn-default dropdown-toggle rateBtn" type="button" id="ratingsMenu" data-toggle="dropdown" aria-expanded="true">
+					<span class="pull-left">Ratings</span> &nbsp; &nbsp; &nbsp;
+					 <span class="caret rateCaret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="ratingsMenu">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">5 stars</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">4 stars</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">3 stars</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">2 stars</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">1 star</a></li>
+				</ul>
+			 </div>
+			 
+			  <div class="form-group has-feedback leftMarg">
+				<i class="glyphicon glyphicon-search form-control-feedback"></i>
+				<input type="text" class="form-control inputWidth" role="search" placeholder="Search keyword"/>
+			  </div>
+			</form>	
+		</div>
+		
+		
+		
+		<!------------------------------>
+		<!--Provider div content -->
+		<!------------------------------>
+		<div class="row">
+			  <div ng-repeat="provider in providers" class="noDec margleftRepeat">
+					<a href="#/{{provider.id}}">
+					<div id="{{provider.id}}" hide-img class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 providerStyle">
+					  <img class="imgProvider lazy img-responsive" ng-src="GroupImages/Misc/loading.gif" data-original="{{provider.image}}"/>
+					  <p class="providerText hideDetails">{{provider.shortDesc}}</p>
+					  <!--Add title, and ratings-->
+					  <div class="h4ProviderStyle row">
+						<h4 class="col-xs-2 margLeft10">{{provider.title}}</h4>
+						<div change-color rating="{{provider.Ratings}}" class="col-xs-5 pull-right">
+							<span id="dot01" class="glyphicon glyphicon-star-empty glyphStarFont" aria-hidden="true"></span>
+							<span id="dot02" class="glyphicon glyphicon-star-empty glyphStarFont" aria-hidden="true"></span>
+							<span id="dot03" class="glyphicon glyphicon-star-empty glyphStarFont" aria-hidden="true"></span>
+							<span id="dot04" class="glyphicon glyphicon-star-empty glyphStarFont" aria-hidden="true"></span>
+							<span id="dot05" class="glyphicon glyphicon-star-empty glyphStarFont" aria-hidden="true"></span>
+						</div>
+					  </div>
+					 			 
+					  <h6 class="h6ProviderStyle pull-left">{{provider.JobDesc}}<span class="padLeft3">{{provider.Rates}}</span><span class="pull-right padRight">{{provider.Location}}</span></h6>
+					</div>
+					</a>
+			 </div><!-- End: ng-repeat -->
+			
+			
+		  </div><!--End: Provider div content -->
+		
+  </div><!--End div class="container-fluid" -->
+   
+  

@@ -1,0 +1,26 @@
+  <!-- ======== @Region: body ======== -->
+
+	
+	<!-- Add wellness sub-section Picture-->
+	<div class="ht60">
+		<h1 class="h1Fit">Fitness for every lifestyle</h1>
+	</div>
+		
+   <div class="container-fluid margTop3">
+   <!--Main div content -->
+	<div class="row mainContent"><!--Main div content -->
+	  <div ng-if="!searchInput.title">
+		<a href="#" ng-repeat="activity in fitness" class="noDec">
+			<well-dir></well-dir>
+		</a>
+	 </div><!-- End: ng-if-->
+	
+	 <div ng-if="searchInput.title">
+		<a href="#" ng-repeat="activity in fitness|filter:{title:searchInput.title}" class="noDec">
+		 <well-dir></well-dir>
+		</a>
+	 </div><!-- End: ng-if-->
+	</div><!--End: Main div content -->
+  </div><!--End div class="container" -->
+      
+   

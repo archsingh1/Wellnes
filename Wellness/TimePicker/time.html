@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Time picker - Display inline</title>
+  <link rel="stylesheet" href="jquery-timepicker-master/jquery-timepicker-master/jquery.timepicker.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-timepicker-master/jquery-timepicker-master/jquery.timepicker.min.js"></script>
+</head>
+<body>
+ <p>
+	Time: 
+	<input id="timePicker" value="" placeholder="9:00am" class="ui-timepicker-input some-time-inputs" type="text">
+ </p>
+
+
+<script>
+	$(document).ready(function(){
+		$('#timePicker').timepicker(
+			{
+				'minTime': '9:00am',
+				'maxTime': '6:00pm',
+				'disableTimeRanges':[['4pm', '5pm']]
+			}
+		);//End timepicker
+	});
+</script>
+
+</body>
+</html>

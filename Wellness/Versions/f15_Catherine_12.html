@@ -1,0 +1,182 @@
+  <!-- ======== @Region: body ======== -->
+   <div class="container-fluid margLeft">
+		<!--Left div content -->
+		<div class="row fitCont">
+			<div class="col-sm-3 fitColsm3">
+				<img class="img-reponsive fitImg" src="GroupImages/Fitness/fitnessProviders/Catherine_sm.jpg" />
+				<p class="fitP">{{provider.title}}</p>
+				<p class="fitProv" >{{provider.JobDesc}}</p>
+				<p change-color rating="{{provider.Ratings}}" class="" style="margin-left:35%;">
+							<span id="dot01" class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font:1.4em;"></span>
+							<span id="dot02" class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font:1.4em;"></span>
+							<span id="dot03" class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font:1.4em;"></span>
+							<span id="dot04" class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font:1.4em;"></span>
+							<span id="dot05" class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font:1.4em;"></span>
+				</p>
+				<p class="fitProvLoc">{{provider.Location}}</p>
+			</div><!--End:  class="col-sm-3"-->
+			
+			<!-----------------------service, Experience and Education Section--------------------------->
+			<div class="col-sm-8 pull-right fitColsm8" serviceexpedu>
+				<h2 class="fitH2">Hi, I am Catherine!</h2>
+				
+				<nav class="navbar navbar-default fitNavDefault">
+				  <div class="container-fluid">
+					<div class="navbar-header">
+					  <a class="navbar-brand fitNavbarBrand" href="#" ng-click="showservice($event)">
+						Services
+					  </a><!-- End: service-->
+					  <a class="navbar-brand fitNavbarBrand textalignCenter" href="#" ng-click="showExp($event)">
+						Background
+					  </a><!-- End: Experience-->
+					  <a class="navbar-brand fitNavbarBrand textalignRight" href="#" ng-click="showEdu($event)">
+						Education
+					  </a><!-- End: Education-->
+					</div> <!--End: class="navbar-header"-->
+				  </div><!-- End: class="container-fluid"-->
+				</nav>
+				
+				<!-- service-->
+				<div ng-show="serviceProv">	
+					<h4 class="" style="margin-top:0px !important; font-weight:bold; font-size:1.6em;">Services Offered</h4>
+					<div ng-repeat="service in provider.Details track by $index">
+						<ul class="listStyle" ng-repeat="(key, value) in service">
+							<li><strong>{{key}}:</strong>&nbsp;{{value}}</li>
+						</ul>
+					</div>
+					
+					<h4 class="" style="margin-top:30px !important; font-weight:bold; font-size:1.6em;">Rates</h4>
+					<div ng-repeat="rate in provider.Rates track by $index">
+						<ul class="listStyle" ng-repeat="(key, value) in rate">
+							<li><strong>{{key}}:</strong>&nbsp;{{value}}</li>
+						</ul>
+					</div>
+				</div><!--End ng-show="serviceProv"-->
+				
+				<!-- Experience-->
+				<div ng-hide="expProv">	
+					<h4 class="" style="margin-top:0px !important; font-weight:bold; font-size:1.6em;">Background</h4>
+					<span>{{provider.Experience}}</span>
+					
+					<div ng-repeat="detail in provider.Details track by $index" style="margin-top:30px !important;">
+						<ul class="listStyle" ng-repeat="(key, value) in detail">
+							<li><strong>{{key}}:</strong>&nbsp;{{value}}</li>
+						</ul>
+					</div>
+				</div><!--End ng-show="expProv"-->
+					
+				<!-- Education-->
+					<div ng-hide="eduProv">	
+						<h4 class="" style="margin-top:0px !important; font-weight:bold; font-size:1.5em;">Education</h4>
+						<div ng-repeat="edu in provider.Credentials track by $index">
+							<ul class="listStyle">
+								{{edu}}
+							</ul>
+						</div>
+					</div><!--End ng-show="expProv"-->
+				
+				
+				
+			</div> <!--End:class="col-sm-8 pull-right"-->
+		</div> <!-- End row-->
+			
+		<!--Videos -->	
+		<div class="container-fluid" style="margin-top:5%;">
+			<h2 class="" style="margin-left:50%;">Videos I Have Shared</h2>
+			<div class="row" style="margin-top:3%; margin-left:28%; width:950px;">
+				<div ng-repeat="video in provider.Videos track by $index">
+					<div ng-repeat="(key, value) in video track by $index" class="col-md-5 col-lg-6 col-sm-8">
+						<div class=''style="height:400px; width:400px; margin-top:5%;">
+							<a href="#" class="noDec" style="margin-left:-10%; margin-right:10%;">
+								<img style="height:390px; width:400px; position:absolute; margin-top:-20px;" ng-src="{{key}}" />
+								<div>
+									<div id="introWellIcon" class="glyphicon glyphicon-play-circle" aria-hidden="true" style="margin-left:30%; margin-top:30%; margin-bottom:15%; color:#000000; font-size:4em;"></div> 
+									<p class="" style="margin-top:7%; margin-left:-10%; margin-right:20%; margin-left:-10%; height:80px; width:400px; background-color:#ffffff; color:#000000; position:relative; opacity:.9; font-size:1.3em; padding-left:3%; padding-top:3%;">
+										{{value}}
+									</p>
+								</div>
+							</a>
+						</div> <!-- End: class=thumbnail -->
+					</div>	<!-- End: nested ng-repeat-->
+				</div> <!-- End ng-repeat-->	
+			</div>	<!-- End: row-->
+		</div>				
+		<!--End: Videos -->	
+		
+		<!--Articles -->	
+		<div class="container-fluid" style="margin-top:5%;">
+			<h2 class="" style="margin-left:50%;">Some Of My Writings</h2>
+			<div class="row" style="margin-top:3%; margin-left:28%; width:950px;">
+				<div ng-repeat="article in provider.Article track by $index">
+					<div ng-repeat="(key, value) in article" class="col-md-5 col-lg-6 col-sm-8">
+						<div class='thumbnail'style="height:450px; width:400px; margin-top:5%;">
+							<a href="#" class="noDec" style="margin-left:-10%; margin-right:10%;">
+								<img ng-src="{{key}}" class="img-responsive" style="width:400px; height:350px; margin-top:-5%;">
+								<p class="caption" style="height:100px;">
+									{{value}}
+								</p>
+							</a>
+						</div> <!-- End: class=thumbnail -->
+					</div>	<!-- End: nested ng-repeat-->
+				</div> <!-- End ng-repeat-->	
+			</div>	<!-- End: row-->
+		</div>
+		<!------------------------ End Articles------------------>
+				
+		<!--Reviews -->	
+		<div class="container-fluid" style="margin-top:5%;">
+			<h2 class="" style="margin-left:55%; margin-bottom:3%;">My Reviews</h2>
+			<div style="margin-left:30%; margin-top:2%;width:900px; background-color:#ffffff;">
+				<div class="row">	
+					<div ng-repeat="review in provider.Reviews track by $index">
+						<div class="col-md-3" style="margin-top:2%; margin-left:3%; margin-bottom:3%;">
+							<img style="height:100px; width:100px; border-radius:50%;" ng-src="{{review.userPic}}" /><br />
+							<p style="height:15px; padding-left:15% !important; margin-top:3%; padding-top:1%;">{{review.userName}}</p>
+							<p change-color rating="{{review.rateNum}}" class="" style="padding-left:5%; margin-top:0%;">
+								<span id="dot01" class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font:1.4em;"></span>
+								<span id="dot02" class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font:1.4em;"></span>
+								<span id="dot03" class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font:1.4em;"></span>
+								<span id="dot04" class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font:1.4em;"></span>
+								<span id="dot05" class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font:1.4em;"></span>
+							</p>
+						</div>
+						<div class="col-md-8" style="margin-top:2%; margin-right:3%; margin-bottom:3%; border-style:solid; border-width:2px; border-color:#e5e5e5; padding-top:2%; padding-bottom:2%;">
+							{{review.rateDesc}}
+						</div>
+						<hr />
+					</div>	<!--End: ng-repeat -->
+				</div> <!-- class="row"-->
+			</div>
+		</div>	<!-- End: class="container-fluid"-->
+		<!-- Reviews--->
+		
+		<!--Map -->	
+		 <div style="margin-top:10%; margin-left:-4%; margin-bottom:5%; height:500px !important; width:100vw !important;">
+			 <!--div style="background-color:#ffffff; height:100px;">
+				<h2 style="margin-left:40%; padding-top:20px;">Cathrine's Location</h2>
+				<span><h4 style="margin-left:45%; padding-top:0px;">Newmarket, ON</h4></span>
+			 
+			 </div-->
+			 <map zoom="11" center="[44.0600, -79.4500]" style="height:500px !important; width:100vw !important;">
+			  <marker position="[44.0600, -79.4500]" />
+			  <control name="overviewMap" opened="true" />
+			</map>  
+		</div>
+		<!-- End: Map-->
+			
+  </div><!--End div class="container-fluid" -->
+   
+   
+   <style>
+   
+   hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:#e5e5e5;
+  height: 1.5px;
+}
+   
+   </style>
+  

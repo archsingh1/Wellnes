@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>ZymaLife | Find Groups and Activities to Get Motivated</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- @todo: fill with your company info or remove -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ 
+ <style>
+	.imgBright{
+		-webkit-filter: brightness(50%);
+		-moz-filter: brightness(50%);
+	}
+	
+	.main-nav, .main {
+	  position: relative; 
+	}
+	.main-nav {
+	  background: #448aff; color:#ffffff !important;
+	  height: 80px;
+	  z-index: 150;
+	  margin-bottom: -80px;
+	  box-shadow: 0 2px 3px rgba(0,0,0,.4);
+	}
+
+	.main-nav-scrolled {
+	  position: fixed;
+	  width: 100%;
+	  top: 0;
+	}
+	.main {
+	  padding: 110px 0px 50px 0px;
+	 }
+		
+	#mainCont{height:2000px;}	
+	.carousel-slide{margin-top:-20px; margin-bottom:0px;}	
+		
+	.imgCarousel{height:600px !important; width:1500px;}	
+	
+	.carouselCaption{cursor:pointer; margin-bottom:150px;}	
+		
+	.carouselH1{color:#ffffff; font-size:2em; font-weight:bold;}	
+		
+	.spanFont{font-size:4em;}	
+	
+	.getStarted{height:700px;}	
+	
+	.startImg{height:700px; width:1500px; position:absolute;}
+	
+	.startDiv{height:700px; color:#ffffff; background-color:#0f505f; position:relative; opacity:.98;}
+	
+	.startH2{margin-top:0px; padding-top:30px; padding-left:650px; font-size:3em;}
+	
+	.navSaveTag{padding-top:0; color:#ffffff; font-size:2.3em; margin-left:10px; padding-left:150px;}
+	
+	 .navChangeTag{padding-top:0; color:#ffffff; font-size:2.3em; margin-left:80px;}
+	 
+	 .navOutcomeTag{padding-top:0; color:#ffffff; font-size:2.3em; margin-left:10px; padding-left:10px; margin-left:100px;}
+	 
+	 .mainSection{padding-left:0; margin-top:60px;  margin-left:0px; margin-right:0px; background-color:#ffffff; width:1499px;}
+	 
+	 .saveSecDiv{height:400px !important; width:1300px; margin-bottom:20px; margin-top:-50px; margin-left:140px; padding-right:140px; color:#512DA8;}
+	 
+	.saveSecPara{font-size:2em; line-height:150%; margin-right:20px;}	
+	
+	.saveSecImg{width:450px; height:400px !important; padding-top:10px;}
+	
+	.changeSecDiv{height:400px !important; width:1300px; margin-bottom:20px; margin-top:130px; margin-left:140px; padding-right:40px; color:#00BCD4;}
+	
+	.changeSecImg{width:450px; height:400px !important; padding-top:10px;}
+	
+	.changeSecPara{font-size:2em; line-height:150%; margin-right:20px;margin-left:30px;}
+	
+	.outcomeSecDiv{height:400px !important; width:1300px; margin-bottom:20px; margin-top:100px; margin-left:140px; padding-right:40px; color:#303F9F;}
+	
+	.outcomeSecPara{font-size:2em; line-height:150%; margin-right:20px;}
+	
+	.outcomeSecImg{width:450px; height:400px !important; padding-top:10px;}
+	
+</style> 
+ </head>
+  
+  <!-- ======== @Region: body ======== -->
+  <body>
+	<!-- Add the Header without the Search Button-->
+    <header id="header">
+		<nav class="navbar navbar-default" role="navigation">
+		 <div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" id="headZyma">Zyma<span id="headLife">Life</span></a>
+			</div>
+			<ul class="nav navbar-nav pull-right">
+				<li><a href="#"  class="liNav">Home</a></li>
+				<li class="dropdown">
+				  <a href="#" class="liNav dropdown-toggle" id="dropdownWellness" data-toggle="dropdown" aria-expanded="true">Wellness&nbsp;<span class="caret"></span></a>
+
+				  <ul id="wellUL" class="dropdown-menu" role="menu" aria-labelledby="dropdownWellness">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="wellItem">Fitness</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="wellItem">Nutrition</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="wellItem">Mindful</a></li>
+				 </ul>
+			   </li>
+				<li><a href="#" class="liNav">Login</a></li>
+			</ul>
+		 </div>	<!-- End header nav container div-->
+		</nav>
+	</header>
+	
+	<!-------------------------------->
+	<!------------Main Content-------->
+	<!-------------------------------->
+	<div id="mainCont">	
+	 <!-- Carousel-->
+	 <div id="carousel-example-generic" class="carousel slide carousel-slide" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	  </ol>
+ 
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner">
+		<div class="item active">
+		  <img class="imgBright imgCarousel" src="GroupImages/Wellness/Nutrition/oats_barley.jpg" />
+		  <div class="carousel-caption carouselCaption">
+		   <span class="spanFont glyphicon glyphicon-play-circle" aria-hidden="true"></span> 
+		   <h1 class="carouselH1">Making Health Happen</h1>
+		  </div>
+		</div>
+		<div class="item">
+		  <img class="imgBright imgCarousel" src="GroupImages/Cardio/fitness.jpg" />
+		  <div class="carousel-caption carouselCaption">
+			<span class="spanFont glyphicon glyphicon-play-circle" aria-hidden="true"></span> 
+			<h1 class="carouselH1">Making Fitness Happen</h1>
+		  </div>
+		</div>
+		<div class="item">
+		  <img class="imgBright imgCarousel" src="GroupImages/Flex/YogaBreathe.jpg" />
+		  <div class="carousel-caption carouselCaption">
+			<span class="spanFont glyphicon glyphicon-play-circle" aria-hidden="true"></span> 
+			<h1 class="carouselH1">Making Mental Well-being Happen</h1>
+		  </div>
+		</div>
+	  </div>
+	 
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+	</div> <!-- End - Carousel -->
+	<!-- Get Started-->
+	<div class="getStarted">
+		<img class='startImg' src="GroupImages/Wellness/meeting.jpg" />
+		<div class="startDiv">
+			<h2 class="startH2">Get Started!</h2>
+		</div>
+	</div>
+	<!--End: Get Started-->
+
+	<!--Sticky Nav Bar for 'Plan, Save, Enjoy' section  
+		Code from: http://codepen.io/Guilh/pen/JLKbn
+	-->
+	<nav class="main-nav">
+	  <a href="#"><h3 id="saveTag" class="col-sm-3 navSaveTag">Savings</h3></a>
+	  
+	  <a href="#"><h3 id="changeTag" class="col-sm-3 navChangeTag">Effective Changes</h3></a>
+	  
+	  <a href="#"><h3 id="outcomeTag" class="col-sm-3 navOutcomeTag">Positive Outcomes</h3></a>
+	</nav>
+	<div class="main container mainSection">
+		<!--Savings Section -->
+	  <div id="saveSec" class="row saveSecDiv">
+		<p class="col-md-7 saveSecPara"><strong>Save on time and money.</strong><br /> Tum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In iaculis pharetra odio, sit amet consectetur elit facilisis ac. Praesent eget tristique ipsum. Donec malesuada bibendum lacinia. Praesent non purus sodales, pulvinar mi vitae, tincidunt leo. Phasellus vitae elit ut nisl semper fringilla id rutrum dolor. Donec a massa adipiscing, cursus risus vitae, porttitor tortor. </p>
+		<img class="col-md-5 saveSecImg" src="GroupImages/Wellness/finance.jpg"/>
+	  </div>
+	  <!-- Effective Change Section-->
+	  <div id="changeSec" class="row changeSecDiv">
+		<img class="col-md-5 changeSecImg" src="GroupImages/Wellness/Providers/Roxanne.jpg"/>
+		<p class="col-md-7 changeSecPara">
+			<strong>Make changes to your life that are manageable.</strong><br /> Tum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In iaculis pharetra odio, sit amet consectetur elit facilisis ac. Praesent eget tristique ipsum. Donec malesuada bibendum lacinia. Praesent non purus sodales, pulvinar mi vitae, tincidunt leo. Phasellus vitae elit ut nisl semper fringilla id rutrum dolor. Donec a massa adipiscing, cursus risus vitae, porttitor tortor. 
+		</p>
+	  </div>
+		<!-- Positive Change Section -->
+	  <div id="outcomeSec" class="row outcomeSecDiv">
+		<p class="col-md-7 outcomeSecPara">
+			<strong>See the positive outcomes and enjoy your wellness!</strong><br /> Tum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In iaculis pharetra odio, sit amet consectetur elit facilisis ac. Praesent eget tristique ipsum. Donec malesuada bibendum lacinia. Praesent non purus sodales, pulvinar mi vitae, tincidunt leo. Phasellus vitae elit ut nisl semper fringilla id rutrum dolor. Donec a massa adipiscing, cursus risus vitae, porttitor tortor. 
+		</p>
+		<img class="col-md-5 outcomeSecImg" src="GroupImages/Wellness/coffeeNbooks.jpg"/>
+  	  </div>
+		
+	</div>	<!--End: Sticky Nav Bar for 'Plan, Save, Enjoy' section -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</div><!-- End: Main Content-->
+	
+	<!-- FOOTER -->
+	<!--footer id="footer">
+	</footer-->
+  
+  
+  
+  
+  
+	<!--Scripts -->
+	<script src="js/jquery.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<link href="css/themeStyle.css" rel="stylesheet">
+    <script src="jsFiles/wellnessJS.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="Controllers/nutritionController.js"></script>
+	<!--Plugin for Lazy Loading-->
+	<script src="js/jquery.lazyload.js" type="text/javascript"></script>
+	
+	
+	<!-- Make the Savings, Changes and Outcomes nav bar sticky-->
+	<script>
+		var  mn = $(".main-nav");
+		mns = "main-nav-scrolled";
+		hdr = $('main').height();
+
+		$(window).scroll(function() {
+		  if( $(this).scrollTop() > 1300 ) {
+			mn.addClass(mns);
+		  } else {
+			mn.removeClass(mns);
+		  }
+	  	});
+	</script>
+	
+	<script>
+		$(document).ready(function(){
+			$("#saveTag").click(function(event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $("#saveSec").offset().top},
+					'slow');
+				});
+				
+			$("#changeTag").click(function(event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $("#changeSec").offset().top},
+					'slow');
+				});
+				
+			$("#outcomeTag").click(function(event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $("#outcomeSec").offset().top},
+					'slow');
+				});	
+
+		});
+
+	</script>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Datepicker - Display inline</title>
+  <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <!--script>
+  $(function() {
+    
+	$( "#datepicker" ).datepicker({
+		minDate:0,
+		beforeShowDay: $.datepicker.noWeekends
+	});
+
+  });
+  </script-->
+</head>
+<body>
+ 
+<p>Date: <input type="text" id="datepicker"></p>
+
+<style>
+	  .ui-datepicker{
+         width: 185px !important;
+		 font-size:14px;
+	}
+</style>
+
+<script>
+	<!-- Disabling the weekends and certain weekdays in the jquery ui datepicker. The code is from http://davidwalsh.name/jquery-datepicker-disable-days
+	-->
+	/* create an array of days which need to be disabled */
+	var disabledDays = ["8-28-2015","8-26-2015"];
+
+	/* utility functions */
+	function offDays(date) {
+		var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
+		//console.log('Checking (raw): ' + m + '-' + d + '-' + y);
+		for (i = 0; i < disabledDays.length; i++) {
+			if($.inArray((m+1) + '-' + d + '-' + y,disabledDays) != -1 || new Date() > date) {
+				//console.log('bad:  ' + (m+1) + '-' + d + '-' + y + ' / ' + disabledDays[i]);
+				return [false];
+			}
+		}
+		//console.log('good:  ' + (m+1) + '-' + d + '-' + y);
+		return [true];
+	}
+	function noWeekendsOrHolidays(date) {
+		var noWeekend = jQuery.datepicker.noWeekends(date);
+		return noWeekend[0] ? offDays(date) : noWeekend;
+	}
+
+	/* create datepicker */
+	jQuery(document).ready(function() {
+		jQuery('#datepicker').datepicker({
+			dateFormat: 'DD, MM, d, yy',
+			constrainInput: true,
+			beforeShowDay: noWeekendsOrHolidays
+		});
+	});
+
+</script>
+
+
+
+
+</body>
+</html>

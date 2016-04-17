@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="providerp01App">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>ZymaLife | Find Providers to Keep You Motivated</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- @todo: fill with your company info or remove -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<!-- Add Google Maps-->
+	 <script src="https://maps.googleapis.com/maps/api/js"></script>
+	 
+	 <style>
+		table, th, td {
+			border: 1px solid #cccccc;
+			border-collapse: collapse;
+		}
+		td {
+			padding:2px;
+			text-align: center; 
+			width:20px;
+			background-color:#006690;
+			color:#ffffff;
+			font-weight:bold;
+		}
+		
+		th{
+			padding-left: 15px;
+			padding-right:5px;
+			padding-top:5px;
+			padding-bottom:5px;
+			text-align: left;    
+		}
+		
+		
+	</style>
+		
+ </head>
+  
+  <!-- ======== @Region: body ======== -->
+  <body ng-controller="providerp01Controller">
+	<!-- Add the Header-->
+    <header id="header">
+		<nav class="navbar navbar-default" role="navigation">
+		 <div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" id="headZyma">Zyma<span id="headLife">Life</span></a>
+			</div>
+			<ul class="nav navbar-nav pull-right">
+				<li><form name="search-data" class="input-group">
+					<input id="search-data" class="form-control" type="search" ng-model="searchInput.title" placeholder="Search" value=" "/>
+				</form></li>
+				
+				<li><a href="#"  class="liNav">Home</a></li>
+				<li class="dropdown">
+				  <a href="#" class="liNav dropdown-toggle" id="dropdownWellness" data-toggle="dropdown" aria-expanded="true">Wellness&nbsp;<span class="caret"></span></a>
+
+				  <ul id="wellUL" class="dropdown-menu" role="menu" aria-labelledby="dropdownWellness">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="wellItem">Fitness</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="wellItem">Nutrition</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="wellItem">Mindful</a></li>
+				 </ul>
+			   </li>
+				<li><a href="#" class="liNav">Login</a></li>
+			</ul>
+		 </div>	<!-- End header nav container div-->
+		</nav>
+	</header>
+			
+   <div class="container-fluid" style="margin-left:30px;">
+		<!--Main div content -->
+		<div class='row'>
+			<!--Section 1 -->
+			<div class="col-md-6"> 
+				<!-- Picture, Rates, Reviews-->
+				<div class="row well" style="width:675px;">
+					<img class="col-md-4" style="width:200px; height:150px;" src="GroupImages/Wellness/Providers/Alexia.jpg" />
+					<div class="col-md-7">
+						<h2 class="dietHeader" style="margin-left:0px;">{{provider.title}}</h2>
+						<h3 class="dietHeader" style="margin-left:0px; font-weight:normal;">{{provider.JobDesc}}</h3>
+						<p style="margin-top:15px;">Reviews: {{provider.Ratings}}</p>
+						<span style="padding-right:20px;">Rates: {{provider.Rates}}</span>
+						<span>Location: {{provider.Location}}</span>
+					</div>
+				</div><!--End: Picture, Rates, Reviews-->
+			
+				<!--Credentials, Experience, and Details -->
+				<div providerpage-dir class="jumbotron jumboStyle">
+					<div class=" btn-group btn-group-lg provBtnGroup" role="group">
+						<input class="btn btn-group providerButton" role="group"  ng-click="showCred($event)" value="Credentials" />
+						<input class="btn btn-group providerButton" role="group"  ng-click="showExp($event)"value="Experience" />
+						<input class="btn btn-group providerButton" role="group"  ng-click="showDetails($event)"value="Details" />
+					</div>
+					<!--Credentials-->
+					<div ng-show="credProv" style="margin-top:20px;">
+						<h4 class="jumboh4" style="margin-top:-30px !important; font-weight:bold;">Education/Certifications, and Professional Memberships</h4>
+						<ul class="listStyle" ng-repeat="credential in provider.Credentials track by $index">
+							<li>{{credential}}</li>
+						</ul>
+					</div><!--End ng-show="credProv"-->
+					
+					<!-- Experience-->
+					<div ng-hide="expProv">	
+						<h4 class="jumboh4" style="margin-top:0px !important; font-weight:bold;">Work Experience/Professional Statement</h4>
+						<span>{{provider.Experience}}</span>
+					</div><!--End ng-show="expProv"-->
+					
+					<!-- Details-->
+					<div ng-hide="detailsProv">	
+						<h4 class="jumboh4" style="margin-top:0px !important; font-weight:bold;">Relevant Information</h4>
+						<div ng-repeat="details in provider.Details track by $index">
+							<ul class="listStyle" ng-repeat="(key, value) in details">
+								<li><strong>{{key}}:</strong>&nbsp;{{value}}</li>
+							</ul>
+						</div>
+					</div><!--End ng-show="expProv"-->
+				</div><!--End: Credentials, Experience, and Details -->
+			</div><!--End: Section 1 -->	
+			<!--Maps and Appointments-->
+			<div class="col-md-5" style="margin-left:0px;">
+				<!--Maps-->
+				<div  id="map-canvas"></div>
+				<div>
+					<table style="background-color:#ffffff; width:550px; margin-top:20px;">
+						<h4 class="">Make an appointment</h4>
+						<tr style="color:#407CC9;">
+						<th></th>
+						<th>Mon</th>
+						<th>Tue</th>
+						<th>Wed</th>
+						<th>Thurs</th>
+						<th>Fri</th>
+						<th></th>
+						</tr>
+									
+						<tr  ng-repeat="time in apptTime track by $index">
+							<td style="background-color:#ffffff;"></td>
+							<td>{{time}}</td>
+							
+							<td style="background-color:#ffffff;"></td>
+						</tr>
+
+
+
+									
+						<!--tr>
+							<td style="background-color:#ffffff;"></td>
+							<td>{{apptTime.Mon[0]}}</td>
+							<td>9:00am</td>
+							<td>9:00am</td>
+							<td>9:00am</td>
+							<td>9:00am</td>
+							<td style="background-color:#ffffff;"></td>
+						</tr>
+						<tr>
+							<td style="background-color:#ffffff;"></td>
+							<td>10:00am</td>
+							<td>10:00am</td>
+							<td>10:00am</td>
+							<td>10:00am</td>
+							<td>10:00am</td>
+							<td style="background-color:#ffffff;"></td>
+						</tr>
+						<tr>
+							<td style="background-color:#ffffff;"></td>
+							<td>11:00am</td>
+							<td>11:00am</td>
+							<td>11:00am</td>
+							<td>11:00am</td>
+							<td>11:00am</td>
+							<td style="background-color:#ffffff;"></td>
+						</tr>
+						<tr>
+							<td style="background-color:#ffffff;"></td>
+							<td>12:00pm</td>
+							<td>12:00pm</td>
+							<td>12:00pm</td>
+							<td>12:00pm</td>
+							<td>12:00pm</td>
+							<td style="background-color:#ffffff;"></td>
+						</tr>
+						<tr>
+							<td style="background-color:#ffffff;"></td>
+							<td>1:00pm</td>
+							<td>1:00pm</td>
+							<td>1:00pm</td>
+							<td>1:00pm</td>
+							<td>1:00pm</td>
+							<td style="background-color:#ffffff;"></td>
+						</tr>
+						<tr>
+							<td style="background-color:#ffffff;"></td>
+							<td>2:00pm</td>
+							<td>2:00pm</td>
+							<td>2:00pm</td>
+							<td>2:00pm</td>
+							<td>2:00pm</td>
+							<td style="background-color:#ffffff;"></td>
+						</tr>
+						<tr>
+							<td style="background-color:#ffffff;"></td>
+							<td>3:00pm</td>
+							<td>3:00pm</td>
+							<td>3:00pm</td>
+							<td>3:00pm</td>
+							<td>3:00pm</td>
+							<td style="background-color:#ffffff;"></td>
+						</tr>
+						<tr>
+							<td style="background-color:#ffffff;"></td>
+							<td>4:00pm</td>
+							<td>4:00pm</td>
+							<td>4:00pm</td>
+							<td>4:00pm</td>
+							<td>4:00pm</td>
+							<td style="background-color:#ffffff;"></td>
+						</tr>
+						<tr>
+							<td style="background-color:#ffffff;"></td>
+							<td>5:00pm</td>
+							<td>5:00pm</td>
+							<td>5:00pm</td>
+							<td>5:00pm</td>
+							<td>5:00pm</td>
+							<td style="background-color:#ffffff;"></td>
+						</tr-->
+					</table>
+				
+				
+				
+				
+				
+				
+				</div>
+			</div><!--End: class="col-md-5" -->
+		
+		
+		
+		
+		</div> <!--End:Class="Main div content "-->
+		
+		<!-------------------------------->
+		<!------Videos and Articles------->
+		<!-------------------------------->
+		<div class='row'>
+			<h3 class="providerList" style="margin-left:-5px;">Videos</h3>
+			<h3 class="providerList" style="margin-left:-5px;">Articles</h3>
+			<h3 class="providerList" style="margin-left:-5px;">Reviews</h3>
+			
+		</div> 
+		
+  </div><!--End div class="container-fluid" -->
+          
+	<!-- FOOTER -->
+	<footer id="footer">
+	</footer>
+    
+	<!--Scripts -->
+	<script src="js/jquery.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<link href="css/themeStyle.css" rel="stylesheet">
+    <script src="jsFiles/wellnessJS.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="Controllers/providerController_p01.js"></script>
+	<!--Plugin for Lazy Loading-->
+	<script src="js/jquery.lazyload.js" type="text/javascript"></script>
+	
+  </body>
+</html>

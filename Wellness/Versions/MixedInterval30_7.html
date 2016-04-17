@@ -1,0 +1,89 @@
+  <!-- ======== @Region: body ======== -->
+   <div class="container-fluid" style="margin-left:30px;">
+		<!--Main div content -->
+		<div>
+			<img class="img-reponsive imgDiet" src="GroupImages/Fitness/Cardio/CardioIdeas.jpg" />
+			<h1 class="dietHeader">
+				30 Minute Mixed Interval Workout
+			</h1>
+		</div>
+
+			<!--  para div-->
+			<div class="paraDiv">
+				<p class="dietPara">Detox is the short form of detoxification, which is our body's natural way of flushing out toxins. Toxins are products that are harmful to the body are found in food, water or can even be an outcome of  normal cell functioning. <br/><br />
+				</p>
+			</div> <!-- End para div-->
+			
+		<!-------------------------------->
+		<!------Provider and Sort--------->
+		<!-------------------------------->
+		<div class="">
+			<h2 class="" style="text-align:center; padding-top:30px;">Find Providers </h2>
+		</div>
+		<div class="providerSort">
+			<form class="navbar-form navbar-left">
+			  <div class="form-group has-feedback">
+				<i class="glyphicon glyphicon-map-marker form-control-feedback"></i>
+				<input type="text" class="form-control" role="search" placeholder="Search for a city" style="width:300px;"/>
+			  </div>
+			  
+			  <div class="form-group" style="margin-left:50px;"> Price:
+				<input type="text" class="form-control" placeholder="min" style="width:150px;"> -
+				<input type="text" class="form-control" placeholder="max" style="width:150px;">
+			  </div>
+			  
+			  <div class="form-group dropdown" style="margin-left:50px;"> 
+				<button class="btn btn-default dropdown-toggle" type="button" id="ratingsMenu" data-toggle="dropdown" aria-expanded="true" style="width:160px;">
+					<span class="pull-left">Ratings</span> &nbsp; &nbsp; &nbsp;
+					 <span class="caret" style="position:relative; margin-left:50px;"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="ratingsMenu">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">5 stars</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">4 stars</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">3 stars</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">2 stars</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">1 star</a></li>
+				</ul>
+			 </div>
+			 
+			  <div class="form-group has-feedback"  style="margin-left:20px;">
+				<i class="glyphicon glyphicon-search form-control-feedback"></i>
+				<input type="text" class="form-control" role="search" placeholder="Search keyword" style="width:300px;"/>
+			  </div>
+			</form>	
+		</div>
+		
+		
+		
+		<!------------------------------>
+		<!--Provider div content -->
+		<!------------------------------>
+		<div class="row">
+			  <div ng-repeat="provider in providers" class="noDec" style="margin-left:2%;">
+					<a href="#/{{provider.id}}">
+					<div id="{{provider.id}}" hide-img class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 providerStyle">
+					  <img class="imgProvider lazy img-responsive" ng-src="GroupImages/Misc/loading.gif" data-original="{{provider.image}}"/>
+					  <p class="providerText" style="display:none;">{{provider.shortDesc}}</p>
+					  <!--Add title, and ratings-->
+					  <div class="h4ProviderStyle row">
+						<h4 class="col-xs-2" style="padding-left:0px;">{{provider.title}}</h4>
+						<div change-color rating="{{provider.Ratings}}" class="col-xs-5 pull-right">
+							<span id="dot01" class="glyphicon glyphicon-star-empty glyphStarFont" aria-hidden="true"></span>
+							<span id="dot02" class="glyphicon glyphicon-star-empty glyphStarFont" aria-hidden="true"></span>
+							<span id="dot03" class="glyphicon glyphicon-star-empty glyphStarFont" aria-hidden="true"></span>
+							<span id="dot04" class="glyphicon glyphicon-star-empty glyphStarFont" aria-hidden="true"></span>
+							<span id="dot05" class="glyphicon glyphicon-star-empty glyphStarFont" aria-hidden="true"></span>
+						</div>
+					  </div>
+					  
+					  <h6 class="h6ProviderStyle pull-left">{{provider.JobDesc}}<span style="margin-left:10px;">{{provider.Rates}}</span><span style="margin-left:15px;">{{provider.Location}}</span></h6>
+					</div>
+					</a>
+			 </div><!-- End: ng-repeat -->
+			
+			
+		  </div><!--End: Provider div content -->
+		
+  </div><!--End div class="container-fluid" -->
+   
+  

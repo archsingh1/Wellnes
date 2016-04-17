@@ -1,0 +1,123 @@
+<div>
+	<div class="page-header userDiv">
+	  <img class="userImg" src="GroupImages/Wellness/Providers/Alexia.jpg" />	
+	  <h1 class="userName">Alexia Nugyen</h1>
+	  <hr />
+	  <nav class="navbar navbar-default userNavbar">
+		  <div class="container-fluid">
+			<div class="navbar-header userHeader">
+			  <a href="#/AlexWall" class="navbar-text noDec navColor">Wall</a>
+			  <a href="#/AlexAppt" class="navbar-text noDec navColor">Appointments</a>
+			  <a href="#/AlexMsg" class="navbar-text noDec navColor">Messages</a>
+			  <a href="#/AlexReviews" class="navbar-text noDec navColor">Reviews</a>
+			  <a href="#/AlexProfile" class="navbar-text noDec navColor changeCss">Profile</a>
+			</div>
+		  </div>
+	  </nav>
+	</div><!-- End: class="page-header"-->
+
+	<div class="container-fluid userContainer">
+		<!-----------------Profile--------------------->
+		<div class="row colorWhite" style="margin-bottom:5%; padding-top:3%; padding-left:5%; padding-right:5%; padding-bottom:3%;">	
+			<form role="form" class="form-horizontal" id="#userProfileForm" name="userProfileForm" novalidate style="width:50%; margin-left:33%; font-size:1.2em;"  ng-submit="submitUserForm()">
+				<fieldset>
+					<legend style="padding-left:30%; padding-bottom:2%; font-size:1.3em;"><b>Update Profile Information</b></legend>
+					<!--First Name -->
+					<div class="form-group" style="margin-bottom:4%;" ng-class="{'has-success':userProfileForm.userFirstName.$dirty && userProfileForm.userFirstName.$valid, 'has-error':userProfileForm.userFirstName.$dirty && userProfileForm.userFirstName.$invalid}">
+						<label class="col-sm-3 control-label" for="userFirstName">First Name</label>
+						<div class="col-sm-7">
+							<input type="text" id="userFirstName" name="userFirstName" class="form-control" required ng-model="editUserForm.userFirstName" ng-required="true" ng-pattern="/^[A-Za-z].*/"  />
+							<span class="help-block" ng-show="userProfileForm.userFirstName.$error.required && userProfileForm.userFirstName.$dirty">First Name is required</span>
+						</div>
+					</div>
+					<!--Last Name -->
+					<div class="form-group" style="margin-bottom:4%;"  ng-class="{'has-success':userProfileForm.userLastName.$dirty && userProfileForm.userLastName.$valid, 'has-error':userProfileForm.userLastName.$dirty && userProfileForm.userLastName.$invalid}">
+						<label class="col-sm-3 control-label" for="userLastName">Last Name</label>
+						<div class="col-sm-7">
+							<input type="text" id="userLastName" name="userLastName" class="form-control" ng-model="editUserForm.userLastName" ng-required="true" ng-pattern="/^[A-Za-z].*/"  />
+							<span class="help-block" ng-show="userProfileForm.userLastName.$error.required && userProfileForm.userLastName.$dirty">Last Name is required</span>
+						</div>
+					</div>
+					<!--Email -->
+					<div class="form-group" style="margin-bottom:4%;" ng-class="{'has-success':userProfileForm.userEmail.$dirty && userProfileForm.userEmail.$valid, 'has-error':userProfileForm.userEmail.$dirty && userProfileForm.userEmail.$invalid}">
+						<label class="col-sm-3  control-label" for="userEmail">Email</label>
+						<div class="col-sm-7">
+							<input type="email" id="userEmail" name="userEmail" class="form-control" ng-required="true" ng-model="editUserForm.userEmail" />
+							<span class="help-block" ng-show="userProfileForm.userEmail.$error.required && userProfileForm.userEmail.$dirty">A valid email is required</span>
+						</div>
+					</div>
+					<!--User Name-->
+					<div class="form-group" style="margin-bottom:4%;" ng-class="{'has-success':userProfileForm.userName.$dirty && userProfileForm.userName.$valid, 'has-error':userProfileForm.userName.$dirty && userProfileForm.userName.$invalid}">
+						<label class="col-sm-3 control-label" for="userName">Username</label>
+						<div class="col-sm-7">
+							<input type="text" id="userName" name="userName" class="form-control" ng-required="true" ng-model="editUserForm.userName" ng-minlength="3" />
+							<span class="help-block" ng-show="userProfileForm.userName.$error.required && userProfileForm.userName.$dirty">User name must contain at least three characters</span>				
+						</div>
+					</div>				
+					<!--Password-->				
+					<div class="form-group" style="margin-bottom:4%;" ng-class="{'has-success':userProfileForm.userPwd.$dirty && userProfileForm.userPwd.$valid, 'has-error':userProfileForm.userPwd.$dirty && userProfileForm.userPwd.$invalid}">
+						<label class="col-sm-3 control-label" for="userPwd">Password</label>
+						<div class="col-sm-7">
+							<input type="password" id="userPwd" name="userPwd" class="form-control" ng-required="true" ng-model="editUserForm.userPwd" ng-minlength="6"/>
+							<span class="help-block" ng-show="userProfileForm.userPwd.$error.required && userProfileForm.userPwd.$dirty">Password must contain at least six characters</span>						
+						</div>	
+					</div>
+					<!-- Confirm Password-->
+					<div class="form-group" style="margin-bottom:4%;" ng-class="{'has-success':userProfileForm.userConfPwd.$dirty && userProfileForm.userConfPwd.$valid, 'has-error':userProfileForm.userConfPwd.$dirty && userProfileForm.userConfPwd.$invalid}">
+						<label class="col-sm-3 control-label" for="userConfPwd">Confirm Password</label>
+						<div class="col-sm-7">
+							<input type="password" id="userConfPwd" name="userConfPwd" class="form-control" ng-required="true" ng-model="editUserForm.userConfPwd" />
+							<span class="help-block" ng-show="userProfileForm.userConfPwd.$error.required && userProfileForm.userConfPwd.$dirty">Confirm password</span>						
+						</div>	
+					</div>	
+					<!--Picture-->				
+					<div class="form-group" style="margin-bottom:4%;">
+						<label class="col-sm-3 control-label" for="userPic">Picture</label>
+						<div class="col-sm-7">
+							<input type="button" id="userPic" name="userPic" class="form-control" style="width:150px; height:150px; border-radius:50%; margin-left:20%;" ng-model="editUserForm.userPic">
+							<button style="margin-top:2%; margin-left:25%;">Change picture</button>
+						</div>
+					</div>
+					<!--Gender -->
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="userGender">Gender</label> 
+						<div class="col-sm-7">
+							<div>
+								<input type="radio" name="userGender" value="male" style="color:#000000; font-size:1.8em;" ng-model="editUserForm.userGender">Male</input>
+								<input type="radio" name="userGender" value="female" style="margin-left:5%; color:#000000; font-size:1.2em;" ng-model="editUserForm.userGender">Female</input>
+							</div>
+						</div>
+					</div>
+					<!-- Age-->
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="userAge">Age</label> 
+						<div class="col-sm-7">
+							<input type="number" id="userAge" name="userAge" class="form-control" ng-model="editUserForm.userAge">
+						</div>
+					</div>
+					<!--Location -->
+					<!--Reg Ex for the Zip Code is from: http://stackoverflow.com/questions/5586591/validate-zip-code-in-javascript -->
+					<div class="form-group" style="margin-bottom:4%;" ng-class="{'has-success':userProfileForm.userZip.$dirty && userProfileForm.userZip.$valid, 'has-error':userProfileForm.userZip.$dirty && userProfileForm.userZip.$invalid}">
+						<label class="col-sm-3 control-label" for="userZip">Zip Code</label>
+						<div class="col-sm-7">
+							<input type="location" id="userZip" name="userZip" class="form-control" ng-required="true" ng-model="editUserForm.userZip" ng-pattern="/^\d{5}(-\d{4})?(?!-)$/" />
+							<span class="help-block" ng-show="userProfileForm.userZip.$error.required && userProfileForm.userZip.$dirty">A valid zip code is required</span>	
+						</div>
+					</div>
+				</fieldset>
+				
+				<!--Cancel and Submit Buttons -->
+				<div class="form-group" style="margin-top:3%; margin-left:25%;">
+					<button type="button"  class="btn btn-md btn-primary" style="width:100px; margin-left:2%; margin-top:1.5%; font-size:1.1em;" ng-click="cancelUserForm()">Cancel</button>
+					<button type="submit" class="btn btn-md btn-success" style="width:100px; margin-top:1.5%; margin-left:2%; font-size:1.1em;">Save</button>
+				</div>
+			 </form>	 
+		</div><!-- End:Profile-->
+	</div><!-- End:class="container-fluid" -->
+</div>
+<style>
+	.changeCss{
+		padding-bottom:10px; border-bottom:2px solid #1ea1be; font-weight:bold;
+	}
+</style>
+

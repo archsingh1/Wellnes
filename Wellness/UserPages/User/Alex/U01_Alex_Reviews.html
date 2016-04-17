@@ -1,0 +1,53 @@
+<div user-nav>
+	<div class="page-header userDiv">
+	  <img class="userImg" src="GroupImages/Wellness/Providers/Alexia.jpg" />	
+	  <h1 class="userName">Alexia Nugyen</h1>
+	  <hr />
+	  <nav class="navbar navbar-default userNavbar">
+		  <div class="container-fluid">
+			<div class="navbar-header userHeader">
+			  <a href="#/AlexWall" id="navWall" class="navbar-text noDec navColor">Wall</a>
+			  <a href="#/AlexAppt" id="navAppt" class="navbar-text noDec navColor">Appointments</a>
+			  <a href="#/AlexMsg" id="navMail" class="navbar-text noDec navColor">Messages</a>
+			  <a href="#AlexReviews" id="navReviews" class="navbar-text noDec navColor changeCss">Reviews</a>
+			  <a href="#AlexProfile" id="navProfile" class="navbar-text noDec navColor">Profile</a>
+			</div>
+		  </div>
+	  </nav>
+	</div><!-- End: class="page-header"-->
+
+	<div class="container-fluid userContainer">
+		
+		<!---------------Reviews----------------->
+		<div>	
+		<div class="row colorWhite">	
+			<div ng-repeat="review in user.reviews track by $index">
+				<div class="col-md-3 userRev">
+					<a href="#" class="userRevPara noDec">{{review.providerName}}</a>
+					<p change-color rating="{{review.rateNum}}" class="userrateNum">
+						<span id="dot01" class="glyphicon glyphicon-star-empty userRateFont" aria-hidden="true"></span>
+						<span id="dot02" class="glyphicon glyphicon-star-empty userRateFont" aria-hidden="true"></span>
+						<span id="dot03" class="glyphicon glyphicon-star-empty userRateFont" aria-hidden="true"></span>
+						<span id="dot04" class="glyphicon glyphicon-star-empty userRateFont" aria-hidden="true"></span>
+						<span id="dot05" class="glyphicon glyphicon-star-empty userRateFont" aria-hidden="true"></span>
+					</p>
+				</div>
+				<div class="col-md-8" style="margin-top:2%; margin-right:3%; margin-bottom:3%; border-style:solid; border-width:2px; border-color:#e5e5e5; padding-top:2%; padding-bottom:2%;">
+					<p>
+						{{review.rateDesc}}
+						<a href="#" class="noDec" style="margin-left:5%; margin-right:3%;">Edit<a>
+						<a href="#">Delete<a>
+					</p>
+				</div>
+				<hr />
+			</div>	<!--End: ng-repeat -->
+		</div> <!-- class="row"-->
+		</div> <!-- End: Review-->
+	</div><!-- End:class="container-fluid" -->
+</div>
+<style>
+	.changeCss{
+		padding-bottom:10px; border-bottom:2px solid #1ea1be; font-weight:bold;
+	}
+</style>
+

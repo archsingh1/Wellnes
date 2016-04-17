@@ -1,0 +1,66 @@
+  <!-- ======== @Region: body ======== -->
+   <div class="container-fluid" style="margin-left:30px;">
+		<!--Main div content -->
+		<div>
+			<img class="img-reponsive imgDiet" src="GroupImages/Fitness/Cardio/CardioIdeas.jpg" />
+			<h1 class="dietHeader">
+				30 Minute Mixed Interval Workout
+			</h1>
+		</div>
+
+			<!--  para div-->
+			<div class="paraDiv">
+				<p class="dietPara">Detox is the short form of detoxification, which is our body's natural way of flushing out toxins. Toxins are products that are harmful to the body are found in food, water or can even be an outcome of  normal cell functioning. <br/><br />
+				</p>
+			</div> <!-- End para div-->
+			
+		<!-------------------------------->
+		<!------Provider and Sort--------->
+		<!-------------------------------->
+		<div class="">
+			<h2 class="" style="text-align:center; padding-top:30px;">Find Providers </h2>
+		</div>
+			<div class="">
+				<ul class="nav navbar nav-pills providerSort">
+				  <li role="presentation" style="margin-top:10px; margin-left:5px;">Sort by:</li>	
+				  <li role="presentation"><a href="#"><strong>Name</strong></a></li>
+				  <li role="presentation"><a href="#">Location</a></li>
+				  <li role="presentation"><a href="#">Rate</a></li>
+				  <li role="presentation"><a href="#">Reviews</a></li>
+				</ul>
+			</div>
+		
+		
+		
+		<!------------------------------>
+		<!--Provider div content -->
+		<!------------------------------>
+		<div class="row">
+			  <div ng-repeat="provider in providers|limitTo:40 track by $index" style="text-decoration:none;">
+					<a href="#/{{provider.id}}">
+					<div id="{{provider.id}}" provider-dir class="col-sm-3 providerStyle">
+					  <img class="imgProvider" ng-src="{{provider.image}}"/>
+					  <p class="providerText" style="display:none;">{{provider.shortDesc}}</p>
+					  <!--Add title, and ratings-->
+					  <div class="h4ProviderStyle row">
+						<h4 class="col-xs-2" style="padding-left:0px;">{{provider.title}}</h4>
+						<div change-color rating="{{provider.Ratings}}" class="col-xs-5 pull-right" style="padding-top:4px;">
+							<span id="dot01" class="circleStyle"></span>
+							<span id="dot02" class="circleStyle"></span>
+							<span id="dot03" class="circleStyle"></span>
+							<span id="dot04" class="circleStyle"></span>
+							<span id="dot05" class="circleStyle"></span>
+						</div>
+					  </div>
+					  
+					  <h6 class="h6ProviderStyle pull-left">{{provider.JobDesc}}<span style="margin-left:10px;">{{provider.Rates}}</span><span style="margin-left:15px;">{{provider.Location}}</span></h6>
+					</div>
+					</a>
+			 </div><!-- End: ng-if-->
+			
+			
+		  </div><!--End: Provider div content -->
+		
+  </div><!--End div class="container-fluid" -->
+   
+  

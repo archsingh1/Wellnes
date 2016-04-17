@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>ZymaLife | Making Wellness Happen - Together</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- @todo: fill with your company info or remove -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+	<!--Scripts -->
+	<script src="js/jquery.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="Controllers/app.js"></script>
+	<script src="Controllers/CustomersController.js"></script>
+	<script src="Controllers/ordersController.js"></script>
+   
+ </head>
+  
+<body>
+<div ng-hide="userProfile" class="row colorWhite" style="margin-bottom:5%; padding-top:3%; padding-left:5%; padding-right:5%; padding-bottom:3%;">	
+			 <form role="form" class="form-horizontal" style="width:50%; margin-left:30%;" method="POST" action="http://rest.learncode.academy/api/arch/formsUsers">
+				<div class="form-group" style="margin-bottom:4%;">
+					<label class="col-sm-3 control-label" for="fNameUser">First Name</label>
+					<div class="col-sm-7">
+						<input type="text" id="fNameUser" name="fNameUser" class="form-control" required>
+					</div>
+				</div>
+				
+				<div class="form-group" style="margin-bottom:4%;">
+					<label class="col-sm-3 control-label" for="lNameUser">Last Name</label>
+					<div class="col-sm-7">
+						<input type="text" id="lNameUser" name="lNameUser" class="form-control" required>
+					</div>
+				</div>
+				
+				<div class="form-group" style="margin-bottom:4%;">
+					<label class="col-sm-3  control-label" for="email">Email</label>
+					<div class="col-sm-7">
+						<input type="email" id="email" name="email" class="form-control" required>
+					</div>
+				</div>
+								
+				<div class="form-group" style="margin-bottom:4%;">
+					<label class="col-sm-3 control-label" for="password">Password</label>
+					<div class="col-sm-7">
+						<input type="text" id="password" name="password" class="form-control" required>
+					</div>	
+				</div>
+								
+				<div class="form-group" style="margin-bottom:4%;">
+					<label class="col-sm-3 control-label" for="picture">Picture</label>
+					<div class="col-sm-7">
+						<input type="button" id="picture" name="picture" class="form-control" style="width:150px; height:150px; border-radius:50%; margin-left:20%;">
+						<button style="margin-top:2%; margin-left:25%;">Change picture</button>
+					</div>
+				</div>
+				
+				<div class="form-group" style="margin-bottom:4%;">
+					<label class="col-sm-3 control-label" for="username">Username</label>
+					<div class="col-sm-7">
+						<input type="text" id="username" name="username" class="form-control" required>
+					</div>
+				</div>
+			
+				<div class="form-group">
+					<label class="col-sm-3 control-label" for="gender">Gender</label> 
+					<div class="col-sm-7">
+						<input type="radio" name="gender" value="male">Male</input>
+						<input type="radio" name="gender" value="female">Female</input>
+					</div>
+				</div>
+			
+				<div class="form-group" style="margin-bottom:4%;">
+					<label class="col-sm-3 control-label" for="location">Location</label>
+					<div class="col-sm-7">
+						<input type="location" id="location" name="location" class="form-control">
+					</div>
+				</div>
+				<div class="form-group" style="margin-top:3%; margin-left:25%;">
+					<button type="reset" class="btn btn-md btn-primary col-sm-offset-3">Reset</button>
+					<button type="submit" class="btn btn-md btn-success">Save</button>
+				</div>
+			 
+			 </form>
+		</div><!-- End:Profile-->
+		</body>
+</html>

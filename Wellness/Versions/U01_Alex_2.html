@@ -1,0 +1,80 @@
+<div class="page-header" style="margin-bottom:0%; background-color:#ffffff; margin-top:-20px; height: 380px;">
+  <img style="height:150px; width:150px; border-radius:70px; margin-left:45%; margin-top:3%;" src="GroupImages/Wellness/Providers/Alexia.jpg" />	
+  <h1 style="margin-bottom:3%; margin-left:45%;">Alexia Nugyen</h1>
+  <hr />
+  <nav class="navbar navbar-default" style="background-color:#ffffff; border-color:#ffffff; margin-top:-20px;">
+	  <div class="container-fluid">
+		<div class="navbar-header" style="margin-left:37%; font-size:1.3em;">
+		  <a href="#" id="navProfile" class="navbar-text noDec" style="color:#000000 !important;">Profile</a>
+		  <a href="#" id="navMsg" class="navbar-text noDec" style="color:#000000 !important;">Messages</a>
+		  <a href="#" id="navAppt" class="navbar-text noDec" style="color:#000000 !important;">Appointments</a>
+		  <a href="#" id="navInterest" class="navbar-text noDec" style="color:#000000 !important;">Interests</a>
+		</div>
+	  </div>
+  </nav>
+</div><!-- End: class="page-header"-->
+
+<div class="container-fluid" style="margin-left:5%; margin-top:5%; margin-right:5%; margin-bottom:10%;">
+	<div class="row">
+		<a href="#" class="col-md-4 noDec" style="height:300px; width:400px; border:1px solid; border-color:#e5e5e5; margin-right:5%;">
+			<img style="height:300px; width:398px; margin-left:-15px; position:absolute;" src="GroupImages/Fitness/Flex/flexYogaBreath.jpg" />
+			<p style="padding-top:5px; padding-left:5px; font-size:1.3em; font-weight:bold; position:relative; background-color:#ffffff; color:#000000; opacity:.7; height:50px; width:398px; margin-left:-15px; margin-top:250px;">Yoga stretches for better back</p>
+		</a>
+		<div class="col-md-4" style="height:300px; width:400px; border:1px solid; border-color:#e5e5e5; margin-right:5%; background-color:#ffffff;">
+			<img style="height:300px; width:398px; margin-left:-15px; position:absolute;" src="GroupImages/Fitness/Flex/YogaBreathe.jpg" />
+			<p style="padding-top:5px; padding-left:5px; font-size:1.3em; font-weight:bold; position:relative; background-color:#ffffff; color:#000000; opacity:.7; height:50px; width:398px; margin-left:-15px; margin-top:250px;">Want to sleep better? Meditate!</p>
+		</div>
+		<div class="col-md-4" style="height:300px; width:400px; border:1px solid; border-color:#e5e5e5; background-color:#ffffff;">
+			<img style="height:300px; width:398px; margin-left:-15px; position:absolute;" src="GroupImages/Nutrition/Nutrition/organic.jpg" />
+			<p style="padding-top:5px; padding-left:5px; font-size:1.3em; font-weight:bold; position:relative; background-color:#ffffff; color:#000000; opacity:.7; height:50px; width:398px; margin-left:-15px; margin-top:250px;">Healthy eating for happier heart</p>
+		</div>
+	</div><!-- End class="row"-->
+</div><!-- End:class="container-fluid" -->
+
+<style>
+	.changeCss{
+		padding-bottom:10px; border-bottom:2px solid blue; font-weight:bold;
+	}
+</style>
+
+<!-- Dynamically change the CSS of the Profiel, Messages, Appointments and Interests section on click-->
+<script>
+	$('#navProfile').click(function(e){
+		e.preventDefault();
+		$(this).addClass('changeCss');
+		$('#navMsg').removeClass('changeCss');
+		$('#navAppt').removeClass('changeCss');
+		$('#navInterest').removeClass('changeCss');
+	});
+	
+	$('#navMsg').click(function(e){
+		e.preventDefault();
+		$(this).addClass('changeCss');
+		$('#navProfile').removeClass('changeCss');
+		$('#navAppt').removeClass('changeCss');
+		$('#navInterest').removeClass('changeCss');
+	});
+	
+	$('#navAppt').click(function(e){
+		e.preventDefault();
+		$(this).addClass('changeCss');
+		$('#navMsg').removeClass('changeCss');
+		$('#navProfile').removeClass('changeCss');
+		$('#navInterest').removeClass('changeCss');
+	});
+	
+	$('#navInterest').click(function(e){
+		e.preventDefault();
+		$(this).addClass('changeCss');
+		$('#navProfile').removeClass('changeCss');
+		$('#navMsg').removeClass('changeCss');
+		$('#navAppt').removeClass('changeCss');
+	});
+</script>
+
+
+
+
+
+
+
